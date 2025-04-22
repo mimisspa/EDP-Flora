@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace EDP_Flora
 {
-    public partial class admin : Form
+    public partial class forgotPassRestPass : Form
     {
-        public admin()
+        public forgotPassRestPass()
         {
             InitializeComponent();
         }
 
-        private void usernameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void usernameTextBox_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

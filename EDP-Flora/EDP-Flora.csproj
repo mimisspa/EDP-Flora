@@ -58,6 +58,18 @@
     <Compile Include="customer.Designer.cs">
       <DependentUpon>customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="forgotPassVerify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forgotPassVerify.Designer.cs">
+      <DependentUpon>forgotPassVerify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forgotPassRestPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forgotPassRestPass.Designer.cs">
+      <DependentUpon>forgotPassRestPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +113,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="customer.resx">
       <DependentUpon>customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forgotPassVerify.resx">
+      <DependentUpon>forgotPassVerify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forgotPassRestPass.resx">
+      <DependentUpon>forgotPassRestPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

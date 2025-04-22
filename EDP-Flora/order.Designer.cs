@@ -30,12 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.crudPanel = new System.Windows.Forms.Panel();
-            this.totalAmountLabel = new System.Windows.Forms.Label();
-            this.totalAmountTextBox = new System.Windows.Forms.TextBox();
             this.productNameLabel = new System.Windows.Forms.Label();
             this.productNameTextBox = new System.Windows.Forms.TextBox();
-            this.customerNameLabel = new System.Windows.Forms.Label();
-            this.customerNameTextBox = new System.Windows.Forms.TextBox();
             this.quantityLabel = new System.Windows.Forms.Label();
             this.updateBtn = new System.Windows.Forms.Button();
             this.addBtn = new System.Windows.Forms.Button();
@@ -44,7 +40,6 @@
             this.tablePanel = new System.Windows.Forms.Panel();
             this.inventoryDataGridView = new System.Windows.Forms.DataGridView();
             this.OrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,12 +66,8 @@
             // crudPanel
             // 
             this.crudPanel.BackColor = System.Drawing.Color.SeaShell;
-            this.crudPanel.Controls.Add(this.totalAmountLabel);
-            this.crudPanel.Controls.Add(this.totalAmountTextBox);
             this.crudPanel.Controls.Add(this.productNameLabel);
             this.crudPanel.Controls.Add(this.productNameTextBox);
-            this.crudPanel.Controls.Add(this.customerNameLabel);
-            this.crudPanel.Controls.Add(this.customerNameTextBox);
             this.crudPanel.Controls.Add(this.quantityLabel);
             this.crudPanel.Controls.Add(this.updateBtn);
             this.crudPanel.Controls.Add(this.addBtn);
@@ -87,29 +78,11 @@
             this.crudPanel.Size = new System.Drawing.Size(906, 193);
             this.crudPanel.TabIndex = 42;
             // 
-            // totalAmountLabel
-            // 
-            this.totalAmountLabel.AutoSize = true;
-            this.totalAmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalAmountLabel.Location = new System.Drawing.Point(567, 112);
-            this.totalAmountLabel.Name = "totalAmountLabel";
-            this.totalAmountLabel.Size = new System.Drawing.Size(86, 16);
-            this.totalAmountLabel.TabIndex = 34;
-            this.totalAmountLabel.Text = "Total Amount";
-            // 
-            // totalAmountTextBox
-            // 
-            this.totalAmountTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalAmountTextBox.Location = new System.Drawing.Point(659, 108);
-            this.totalAmountTextBox.Name = "totalAmountTextBox";
-            this.totalAmountTextBox.Size = new System.Drawing.Size(225, 22);
-            this.totalAmountTextBox.TabIndex = 33;
-            // 
             // productNameLabel
             // 
             this.productNameLabel.AutoSize = true;
             this.productNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productNameLabel.Location = new System.Drawing.Point(178, 111);
+            this.productNameLabel.Location = new System.Drawing.Point(330, 64);
             this.productNameLabel.Name = "productNameLabel";
             this.productNameLabel.Size = new System.Drawing.Size(93, 16);
             this.productNameLabel.TabIndex = 32;
@@ -118,35 +91,16 @@
             // productNameTextBox
             // 
             this.productNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productNameTextBox.Location = new System.Drawing.Point(277, 109);
+            this.productNameTextBox.Location = new System.Drawing.Point(429, 62);
             this.productNameTextBox.Name = "productNameTextBox";
             this.productNameTextBox.Size = new System.Drawing.Size(225, 22);
             this.productNameTextBox.TabIndex = 31;
-            // 
-            // customerNameLabel
-            // 
-            this.customerNameLabel.AutoSize = true;
-            this.customerNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNameLabel.Location = new System.Drawing.Point(167, 62);
-            this.customerNameLabel.Name = "customerNameLabel";
-            this.customerNameLabel.Size = new System.Drawing.Size(104, 16);
-            this.customerNameLabel.TabIndex = 30;
-            this.customerNameLabel.Text = "Customer Name";
-            this.customerNameLabel.Click += new System.EventHandler(this.nameLabel_Click);
-            // 
-            // customerNameTextBox
-            // 
-            this.customerNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerNameTextBox.Location = new System.Drawing.Point(277, 59);
-            this.customerNameTextBox.Name = "customerNameTextBox";
-            this.customerNameTextBox.Size = new System.Drawing.Size(225, 22);
-            this.customerNameTextBox.TabIndex = 29;
             // 
             // quantityLabel
             // 
             this.quantityLabel.AutoSize = true;
             this.quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityLabel.Location = new System.Drawing.Point(598, 62);
+            this.quantityLabel.Location = new System.Drawing.Point(368, 118);
             this.quantityLabel.Name = "quantityLabel";
             this.quantityLabel.Size = new System.Drawing.Size(55, 16);
             this.quantityLabel.TabIndex = 28;
@@ -194,7 +148,7 @@
             // quantityTextBox
             // 
             this.quantityTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityTextBox.Location = new System.Drawing.Point(659, 59);
+            this.quantityTextBox.Location = new System.Drawing.Point(429, 115);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(225, 22);
             this.quantityTextBox.TabIndex = 26;
@@ -218,7 +172,6 @@
             this.inventoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.inventoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OrderID,
-            this.CustomerName,
             this.ProductName,
             this.Quantity,
             this.TotalAmount});
@@ -231,11 +184,6 @@
             // 
             this.OrderID.HeaderText = "OrderID";
             this.OrderID.Name = "OrderID";
-            // 
-            // CustomerName
-            // 
-            this.CustomerName.HeaderText = "Customer Name";
-            this.CustomerName.Name = "CustomerName";
             // 
             // ProductName
             // 
@@ -445,8 +393,6 @@
         #endregion
 
         private System.Windows.Forms.Panel crudPanel;
-        private System.Windows.Forms.Label customerNameLabel;
-        private System.Windows.Forms.TextBox customerNameTextBox;
         private System.Windows.Forms.Label quantityLabel;
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Button addBtn;
@@ -467,12 +413,9 @@
         private System.Windows.Forms.Button customerBtn;
         private System.Windows.Forms.Button adminBtn;
         private System.Windows.Forms.PictureBox logo;
-        private System.Windows.Forms.Label totalAmountLabel;
-        private System.Windows.Forms.TextBox totalAmountTextBox;
         private System.Windows.Forms.Label productNameLabel;
         private System.Windows.Forms.TextBox productNameTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;

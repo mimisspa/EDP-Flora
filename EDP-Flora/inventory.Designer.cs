@@ -42,7 +42,6 @@
             this.InventoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inventoryLabel = new System.Windows.Forms.Label();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.navbarPanel = new System.Windows.Forms.Panel();
@@ -55,6 +54,7 @@
             this.customerBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.inventoryLabel = new System.Windows.Forms.Label();
             this.crudPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).BeginInit();
@@ -193,16 +193,6 @@
             this.Quantity.HeaderText = "Quantity";
             this.Quantity.Name = "Quantity";
             // 
-            // inventoryLabel
-            // 
-            this.inventoryLabel.AutoSize = true;
-            this.inventoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventoryLabel.Location = new System.Drawing.Point(20, 19);
-            this.inventoryLabel.Name = "inventoryLabel";
-            this.inventoryLabel.Size = new System.Drawing.Size(109, 25);
-            this.inventoryLabel.TabIndex = 20;
-            this.inventoryLabel.Text = "Inventory";
-            // 
             // searchLabel
             // 
             this.searchLabel.AutoSize = true;
@@ -318,7 +308,7 @@
             this.inventoryBtn.Name = "inventoryBtn";
             this.inventoryBtn.Size = new System.Drawing.Size(161, 35);
             this.inventoryBtn.TabIndex = 24;
-            this.inventoryBtn.Text = "Inventory";
+            this.inventoryBtn.Text = "Category";
             this.inventoryBtn.UseVisualStyleBackColor = false;
             // 
             // customerBtn
@@ -360,6 +350,16 @@
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
             // 
+            // inventoryLabel
+            // 
+            this.inventoryLabel.AutoSize = true;
+            this.inventoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inventoryLabel.Location = new System.Drawing.Point(20, 19);
+            this.inventoryLabel.Name = "inventoryLabel";
+            this.inventoryLabel.Size = new System.Drawing.Size(107, 25);
+            this.inventoryLabel.TabIndex = 20;
+            this.inventoryLabel.Text = "Category";
+            // 
             // inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,7 +400,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.Label inventoryLabel;
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Panel navbarPanel;
@@ -413,5 +412,6 @@
         private System.Windows.Forms.Button customerBtn;
         private System.Windows.Forms.Button adminBtn;
         private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.Label inventoryLabel;
     }
 }

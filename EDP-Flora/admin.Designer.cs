@@ -55,6 +55,8 @@
             this.customerBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.crudPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDataGridView)).BeginInit();
@@ -65,6 +67,8 @@
             // crudPanel
             // 
             this.crudPanel.BackColor = System.Drawing.Color.SeaShell;
+            this.crudPanel.Controls.Add(this.label1);
+            this.crudPanel.Controls.Add(this.textBox1);
             this.crudPanel.Controls.Add(this.usernameLabel);
             this.crudPanel.Controls.Add(this.usernameTextBox);
             this.crudPanel.Controls.Add(this.passowrdLabel);
@@ -81,25 +85,27 @@
             // 
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.Location = new System.Drawing.Point(364, 64);
+            this.usernameLabel.Location = new System.Drawing.Point(190, 57);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(70, 16);
             this.usernameLabel.TabIndex = 30;
             this.usernameLabel.Text = "Username";
+            this.usernameLabel.Click += new System.EventHandler(this.usernameLabel_Click);
             // 
             // usernameTextBox
             // 
             this.usernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTextBox.Location = new System.Drawing.Point(437, 61);
+            this.usernameTextBox.Location = new System.Drawing.Point(263, 54);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(225, 22);
             this.usernameTextBox.TabIndex = 29;
+            this.usernameTextBox.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
             // 
             // passowrdLabel
             // 
             this.passowrdLabel.AutoSize = true;
             this.passowrdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passowrdLabel.Location = new System.Drawing.Point(362, 108);
+            this.passowrdLabel.Location = new System.Drawing.Point(188, 113);
             this.passowrdLabel.Name = "passowrdLabel";
             this.passowrdLabel.Size = new System.Drawing.Size(67, 16);
             this.passowrdLabel.TabIndex = 28;
@@ -147,7 +153,7 @@
             // passwordTextBox
             // 
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.Location = new System.Drawing.Point(437, 105);
+            this.passwordTextBox.Location = new System.Drawing.Point(263, 110);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(225, 22);
             this.passwordTextBox.TabIndex = 26;
@@ -360,6 +366,24 @@
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(545, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 16);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Security Answer";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(651, 54);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(225, 22);
+            this.textBox1.TabIndex = 31;
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,6 +435,8 @@
         private System.Windows.Forms.Button customerBtn;
         private System.Windows.Forms.Button adminBtn;
         private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
