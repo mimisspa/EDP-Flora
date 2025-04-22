@@ -31,14 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(forgotPassVerify));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.loginPanel = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.forgotPassword = new System.Windows.Forms.Label();
-            this.signupBtn = new System.Windows.Forms.Button();
+            this.securityQuestionTextBox = new System.Windows.Forms.TextBox();
+            this.securityQuestionLabel = new System.Windows.Forms.Label();
+            this.backBtn = new System.Windows.Forms.Button();
             this.instructionLogin = new System.Windows.Forms.Label();
-            this.loginBtn = new System.Windows.Forms.Button();
+            this.verifyBtn = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.loginLabel = new System.Windows.Forms.Label();
+            this.forgotPasswordLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.loginPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -56,58 +55,48 @@
             // loginPanel
             // 
             this.loginPanel.BackColor = System.Drawing.Color.SeaShell;
-            this.loginPanel.Controls.Add(this.textBox1);
-            this.loginPanel.Controls.Add(this.label1);
-            this.loginPanel.Controls.Add(this.forgotPassword);
-            this.loginPanel.Controls.Add(this.signupBtn);
+            this.loginPanel.Controls.Add(this.securityQuestionTextBox);
+            this.loginPanel.Controls.Add(this.securityQuestionLabel);
+            this.loginPanel.Controls.Add(this.backBtn);
             this.loginPanel.Controls.Add(this.instructionLogin);
-            this.loginPanel.Controls.Add(this.loginBtn);
+            this.loginPanel.Controls.Add(this.verifyBtn);
             this.loginPanel.Controls.Add(this.pictureBox2);
-            this.loginPanel.Controls.Add(this.loginLabel);
+            this.loginPanel.Controls.Add(this.forgotPasswordLabel);
             this.loginPanel.Location = new System.Drawing.Point(2, 0);
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(483, 563);
             this.loginPanel.TabIndex = 2;
             // 
-            // textBox1
+            // securityQuestionTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(39, 313);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(372, 22);
-            this.textBox1.TabIndex = 11;
+            this.securityQuestionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.securityQuestionTextBox.Location = new System.Drawing.Point(39, 313);
+            this.securityQuestionTextBox.Name = "securityQuestionTextBox";
+            this.securityQuestionTextBox.Size = new System.Drawing.Size(372, 22);
+            this.securityQuestionTextBox.TabIndex = 11;
             // 
-            // label1
+            // securityQuestionLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 285);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 16);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "What is your favorite flower?";
+            this.securityQuestionLabel.AutoSize = true;
+            this.securityQuestionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.securityQuestionLabel.Location = new System.Drawing.Point(36, 285);
+            this.securityQuestionLabel.Name = "securityQuestionLabel";
+            this.securityQuestionLabel.Size = new System.Drawing.Size(172, 16);
+            this.securityQuestionLabel.TabIndex = 10;
+            this.securityQuestionLabel.Text = "What is your favorite flower?";
             // 
-            // forgotPassword
+            // backBtn
             // 
-            this.forgotPassword.AutoSize = true;
-            this.forgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forgotPassword.Location = new System.Drawing.Point(184, 315);
-            this.forgotPassword.Name = "forgotPassword";
-            this.forgotPassword.Size = new System.Drawing.Size(0, 20);
-            this.forgotPassword.TabIndex = 9;
-            // 
-            // signupBtn
-            // 
-            this.signupBtn.BackColor = System.Drawing.Color.MistyRose;
-            this.signupBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.signupBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signupBtn.ForeColor = System.Drawing.Color.Maroon;
-            this.signupBtn.Location = new System.Drawing.Point(80, 382);
-            this.signupBtn.Name = "signupBtn";
-            this.signupBtn.Size = new System.Drawing.Size(113, 38);
-            this.signupBtn.TabIndex = 8;
-            this.signupBtn.Text = "Back";
-            this.signupBtn.UseVisualStyleBackColor = false;
+            this.backBtn.BackColor = System.Drawing.Color.MistyRose;
+            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.ForeColor = System.Drawing.Color.Maroon;
+            this.backBtn.Location = new System.Drawing.Point(80, 382);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(113, 38);
+            this.backBtn.TabIndex = 8;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = false;
             // 
             // instructionLogin
             // 
@@ -118,18 +107,18 @@
             this.instructionLogin.TabIndex = 7;
             this.instructionLogin.Text = "Please enter your username and password to continue.";
             // 
-            // loginBtn
+            // verifyBtn
             // 
-            this.loginBtn.BackColor = System.Drawing.Color.Maroon;
-            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBtn.ForeColor = System.Drawing.Color.SeaShell;
-            this.loginBtn.Location = new System.Drawing.Point(269, 382);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(113, 38);
-            this.loginBtn.TabIndex = 6;
-            this.loginBtn.Text = "Verify";
-            this.loginBtn.UseVisualStyleBackColor = false;
+            this.verifyBtn.BackColor = System.Drawing.Color.Maroon;
+            this.verifyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.verifyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.verifyBtn.ForeColor = System.Drawing.Color.SeaShell;
+            this.verifyBtn.Location = new System.Drawing.Point(269, 382);
+            this.verifyBtn.Name = "verifyBtn";
+            this.verifyBtn.Size = new System.Drawing.Size(113, 38);
+            this.verifyBtn.TabIndex = 6;
+            this.verifyBtn.Text = "Verify";
+            this.verifyBtn.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
             // 
@@ -140,16 +129,16 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // loginLabel
+            // forgotPasswordLabel
             // 
-            this.loginLabel.AutoSize = true;
-            this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginLabel.Location = new System.Drawing.Point(153, 172);
-            this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(174, 25);
-            this.loginLabel.TabIndex = 0;
-            this.loginLabel.Text = "Forgot Password";
-            this.loginLabel.Click += new System.EventHandler(this.loginLabel_Click);
+            this.forgotPasswordLabel.AutoSize = true;
+            this.forgotPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotPasswordLabel.Location = new System.Drawing.Point(153, 172);
+            this.forgotPasswordLabel.Name = "forgotPasswordLabel";
+            this.forgotPasswordLabel.Size = new System.Drawing.Size(174, 25);
+            this.forgotPasswordLabel.TabIndex = 0;
+            this.forgotPasswordLabel.Text = "Forgot Password";
+            this.forgotPasswordLabel.Click += new System.EventHandler(this.loginLabel_Click);
             // 
             // forgotPassVerify
             // 
@@ -172,13 +161,12 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel loginPanel;
-        private System.Windows.Forms.Label forgotPassword;
         private System.Windows.Forms.Label instructionLogin;
-        private System.Windows.Forms.Button loginBtn;
+        private System.Windows.Forms.Button verifyBtn;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label loginLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button signupBtn;
+        private System.Windows.Forms.Label forgotPasswordLabel;
+        private System.Windows.Forms.TextBox securityQuestionTextBox;
+        private System.Windows.Forms.Label securityQuestionLabel;
+        private System.Windows.Forms.Button backBtn;
     }
 }

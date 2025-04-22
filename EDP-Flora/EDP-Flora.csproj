@@ -64,11 +64,11 @@
     <Compile Include="forgotPassVerify.Designer.cs">
       <DependentUpon>forgotPassVerify.cs</DependentUpon>
     </Compile>
-    <Compile Include="forgotPassRestPass.cs">
+    <Compile Include="forgotPassResetPass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forgotPassRestPass.Designer.cs">
-      <DependentUpon>forgotPassRestPass.cs</DependentUpon>
+    <Compile Include="forgotPassResetPass.Designer.cs">
+      <DependentUpon>forgotPassResetPass.cs</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -117,8 +117,8 @@
     <EmbeddedResource Include="forgotPassVerify.resx">
       <DependentUpon>forgotPassVerify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forgotPassRestPass.resx">
-      <DependentUpon>forgotPassRestPass.cs</DependentUpon>
+    <EmbeddedResource Include="forgotPassResetPass.resx">
+      <DependentUpon>forgotPassResetPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

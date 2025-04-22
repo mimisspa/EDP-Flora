@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.loginPanel = new System.Windows.Forms.Panel();
+            this.forgotPassword = new System.Windows.Forms.Label();
             this.instructionLogin = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
@@ -39,8 +40,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.loginLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.signupBtn = new System.Windows.Forms.Button();
-            this.forgotPassword = new System.Windows.Forms.Label();
             this.loginPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,7 +49,6 @@
             // 
             this.loginPanel.BackColor = System.Drawing.Color.SeaShell;
             this.loginPanel.Controls.Add(this.forgotPassword);
-            this.loginPanel.Controls.Add(this.signupBtn);
             this.loginPanel.Controls.Add(this.instructionLogin);
             this.loginPanel.Controls.Add(this.loginBtn);
             this.loginPanel.Controls.Add(this.passwordTextBox);
@@ -63,6 +61,15 @@
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(483, 563);
             this.loginPanel.TabIndex = 0;
+            // 
+            // forgotPassword
+            // 
+            this.forgotPassword.AutoSize = true;
+            this.forgotPassword.Location = new System.Drawing.Point(350, 366);
+            this.forgotPassword.Name = "forgotPassword";
+            this.forgotPassword.Size = new System.Drawing.Size(86, 13);
+            this.forgotPassword.TabIndex = 9;
+            this.forgotPassword.Text = "Forgot Password";
             // 
             // instructionLogin
             // 
@@ -79,7 +86,7 @@
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.ForeColor = System.Drawing.Color.SeaShell;
-            this.loginBtn.Location = new System.Drawing.Point(313, 440);
+            this.loginBtn.Location = new System.Drawing.Point(210, 439);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(113, 38);
             this.loginBtn.TabIndex = 6;
@@ -151,28 +158,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // signupBtn
-            // 
-            this.signupBtn.BackColor = System.Drawing.Color.MistyRose;
-            this.signupBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.signupBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signupBtn.ForeColor = System.Drawing.Color.Maroon;
-            this.signupBtn.Location = new System.Drawing.Point(124, 440);
-            this.signupBtn.Name = "signupBtn";
-            this.signupBtn.Size = new System.Drawing.Size(113, 38);
-            this.signupBtn.TabIndex = 8;
-            this.signupBtn.Text = "Sign Up";
-            this.signupBtn.UseVisualStyleBackColor = false;
-            // 
-            // forgotPassword
-            // 
-            this.forgotPassword.AutoSize = true;
-            this.forgotPassword.Location = new System.Drawing.Point(350, 366);
-            this.forgotPassword.Name = "forgotPassword";
-            this.forgotPassword.Size = new System.Drawing.Size(86, 13);
-            this.forgotPassword.TabIndex = 9;
-            this.forgotPassword.Text = "Forgot Password";
-            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,7 +188,6 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label instructionLogin;
-        private System.Windows.Forms.Button signupBtn;
         private System.Windows.Forms.Label forgotPassword;
     }
 }

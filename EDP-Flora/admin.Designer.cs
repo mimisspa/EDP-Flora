@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin));
             this.crudPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passowrdLabel = new System.Windows.Forms.Label();
@@ -51,12 +53,10 @@
             this.saleBtn = new System.Windows.Forms.Button();
             this.productBtn = new System.Windows.Forms.Button();
             this.orderBtn = new System.Windows.Forms.Button();
-            this.inventoryBtn = new System.Windows.Forms.Button();
+            this.categoryBtn = new System.Windows.Forms.Button();
             this.customerBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.crudPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDataGridView)).BeginInit();
@@ -80,6 +80,24 @@
             this.crudPanel.Name = "crudPanel";
             this.crudPanel.Size = new System.Drawing.Size(906, 193);
             this.crudPanel.TabIndex = 33;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(545, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 16);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Security Answer";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(651, 54);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(225, 22);
+            this.textBox1.TabIndex = 31;
             // 
             // usernameLabel
             // 
@@ -235,7 +253,7 @@
             this.navbarPanel.Controls.Add(this.saleBtn);
             this.navbarPanel.Controls.Add(this.productBtn);
             this.navbarPanel.Controls.Add(this.orderBtn);
-            this.navbarPanel.Controls.Add(this.inventoryBtn);
+            this.navbarPanel.Controls.Add(this.categoryBtn);
             this.navbarPanel.Controls.Add(this.customerBtn);
             this.navbarPanel.Controls.Add(this.adminBtn);
             this.navbarPanel.Controls.Add(this.logo);
@@ -313,19 +331,19 @@
             this.orderBtn.Text = "Order";
             this.orderBtn.UseVisualStyleBackColor = false;
             // 
-            // inventoryBtn
+            // categoryBtn
             // 
-            this.inventoryBtn.BackColor = System.Drawing.Color.MistyRose;
-            this.inventoryBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.inventoryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.inventoryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventoryBtn.ForeColor = System.Drawing.Color.Maroon;
-            this.inventoryBtn.Location = new System.Drawing.Point(27, 249);
-            this.inventoryBtn.Name = "inventoryBtn";
-            this.inventoryBtn.Size = new System.Drawing.Size(161, 35);
-            this.inventoryBtn.TabIndex = 24;
-            this.inventoryBtn.Text = "Inventory";
-            this.inventoryBtn.UseVisualStyleBackColor = false;
+            this.categoryBtn.BackColor = System.Drawing.Color.MistyRose;
+            this.categoryBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.categoryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.categoryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryBtn.ForeColor = System.Drawing.Color.Maroon;
+            this.categoryBtn.Location = new System.Drawing.Point(27, 249);
+            this.categoryBtn.Name = "categoryBtn";
+            this.categoryBtn.Size = new System.Drawing.Size(161, 35);
+            this.categoryBtn.TabIndex = 24;
+            this.categoryBtn.Text = "Category";
+            this.categoryBtn.UseVisualStyleBackColor = false;
             // 
             // customerBtn
             // 
@@ -365,24 +383,6 @@
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(545, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 16);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Security Answer";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(651, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 22);
-            this.textBox1.TabIndex = 31;
             // 
             // admin
             // 
@@ -431,7 +431,7 @@
         private System.Windows.Forms.Button saleBtn;
         private System.Windows.Forms.Button productBtn;
         private System.Windows.Forms.Button orderBtn;
-        private System.Windows.Forms.Button inventoryBtn;
+        private System.Windows.Forms.Button categoryBtn;
         private System.Windows.Forms.Button customerBtn;
         private System.Windows.Forms.Button adminBtn;
         private System.Windows.Forms.PictureBox logo;

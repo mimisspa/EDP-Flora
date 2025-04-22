@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EDP_Flora
 {
-    public partial class forgotPassRestPass : Form
+    public partial class forgotPassResetPass : Form
     {
-        public forgotPassRestPass()
+        public forgotPassResetPass()
         {
             InitializeComponent();
         }
