@@ -35,7 +35,9 @@ namespace EDP_Flora
 
         private void admin_Load(object sender, EventArgs e)
         {
-            LoadAdminTable(); 
+            LoadAdminTable();
+            adminDataGridView.CellClick += adminDataGridView_CellClick;
+
         }
 
         private void navbarPanel_Paint(object sender, PaintEventArgs e)
@@ -57,16 +59,19 @@ namespace EDP_Flora
 
         private void categoryBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
             OpenForm(new category());
         }
 
         private void orderBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
             OpenForm(new order());
         }
 
         private void productBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
             OpenForm(new product());
         }
 
@@ -77,6 +82,7 @@ namespace EDP_Flora
 
         private void supplierBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
             OpenForm(new supplier());
         }
 
@@ -147,28 +153,35 @@ namespace EDP_Flora
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = adminDataGridView.Rows[e.RowIndex];
-                usernameTextBox.Text = row.Cells["username"].Value.ToString();
-                passwordTextBox.Text = row.Cells["password"].Value.ToString();
-                securityAnsTextBox.Text = row.Cells["security_answer"].Value.ToString();
+                usernameTextBox.Text = row.Cells["username"].Value?.ToString() ?? string.Empty;
+                passwordTextBox.Text = row.Cells["password"].Value?.ToString() ?? string.Empty;
+                securityAnsTextBox.Text = row.Cells["security_answer"].Value?.ToString() ?? string.Empty;
             }
         }
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection con = new MySqlConnection(conString))
+            if (adminDataGridView.CurrentRow != null)
             {
-                con.Open();
+                using (MySqlConnection con = new MySqlConnection(conString))
+                {
+                    con.Open();
 
-                string query = "UPDATE admin SET username = @username, password = @password, security_answer = @security_answer WHERE admin_id = @admin_id";
-                MySqlCommand cmd = new MySqlCommand(query, con);
+                    string query = "UPDATE admin SET username = @username, password = @password, security_answer = @security_answer WHERE admin_id = @admin_id";
+                    MySqlCommand cmd = new MySqlCommand(query, con);
 
-                cmd.Parameters.AddWithValue("@username", usernameTextBox.Text);
-                cmd.Parameters.AddWithValue("@password", passwordTextBox.Text); // hash if needed
-                cmd.Parameters.AddWithValue("@security_answer", securityAnsTextBox.Text);
-                cmd.Parameters.AddWithValue("@admin_id", adminDataGridView.CurrentRow.Cells["admin_id"].Value);
+                    cmd.Parameters.AddWithValue("@username", usernameTextBox.Text);
+                    cmd.Parameters.AddWithValue("@password", passwordTextBox.Text); 
+                    cmd.Parameters.AddWithValue("@security_answer", securityAnsTextBox.Text);
+                    cmd.Parameters.AddWithValue("@admin_id", adminDataGridView.CurrentRow.Cells["admin_id"].Value);
 
-                int result = cmd.ExecuteNonQuery();
-                MessageBox.Show(result + " record(s) updated");
+                    int result = cmd.ExecuteNonQuery();
+                    MessageBox.Show(result + " record(s) updated");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No row selected. Please select a row to update.");
             }
         }
 
@@ -249,7 +262,7 @@ namespace EDP_Flora
                         {
                             for (int i = 0; i < dgv.Columns.Count; i++)
                             {
-                                var cellValue = row.Cells[i].Value?.ToString()?.Replace(",", " "); 
+                                var cellValue = row.Cells[i].Value?.ToString()?.Replace(",", " ");
                                 sw.Write(cellValue);
                                 if (i < dgv.Columns.Count - 1)
                                     sw.Write(",");

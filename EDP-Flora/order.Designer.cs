@@ -29,20 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(order));
-            this.crudPanel = new System.Windows.Forms.Panel();
-            this.productNameLabel = new System.Windows.Forms.Label();
-            this.productNameTextBox = new System.Windows.Forms.TextBox();
-            this.quantityLabel = new System.Windows.Forms.Label();
-            this.updateBtn = new System.Windows.Forms.Button();
-            this.addBtn = new System.Windows.Forms.Button();
-            this.deleteBtn = new System.Windows.Forms.Button();
-            this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.tablePanel = new System.Windows.Forms.Panel();
-            this.inventoryDataGridView = new System.Windows.Forms.DataGridView();
-            this.OrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderLabel = new System.Windows.Forms.Label();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
@@ -56,156 +48,58 @@
             this.customerBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.crudPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.navbarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // crudPanel
-            // 
-            this.crudPanel.BackColor = System.Drawing.Color.SeaShell;
-            this.crudPanel.Controls.Add(this.productNameLabel);
-            this.crudPanel.Controls.Add(this.productNameTextBox);
-            this.crudPanel.Controls.Add(this.quantityLabel);
-            this.crudPanel.Controls.Add(this.updateBtn);
-            this.crudPanel.Controls.Add(this.addBtn);
-            this.crudPanel.Controls.Add(this.deleteBtn);
-            this.crudPanel.Controls.Add(this.quantityTextBox);
-            this.crudPanel.Location = new System.Drawing.Point(250, 446);
-            this.crudPanel.Name = "crudPanel";
-            this.crudPanel.Size = new System.Drawing.Size(906, 193);
-            this.crudPanel.TabIndex = 42;
-            // 
-            // productNameLabel
-            // 
-            this.productNameLabel.AutoSize = true;
-            this.productNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productNameLabel.Location = new System.Drawing.Point(330, 64);
-            this.productNameLabel.Name = "productNameLabel";
-            this.productNameLabel.Size = new System.Drawing.Size(93, 16);
-            this.productNameLabel.TabIndex = 32;
-            this.productNameLabel.Text = "Product Name";
-            // 
-            // productNameTextBox
-            // 
-            this.productNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productNameTextBox.Location = new System.Drawing.Point(429, 62);
-            this.productNameTextBox.Name = "productNameTextBox";
-            this.productNameTextBox.Size = new System.Drawing.Size(225, 22);
-            this.productNameTextBox.TabIndex = 31;
-            // 
-            // quantityLabel
-            // 
-            this.quantityLabel.AutoSize = true;
-            this.quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityLabel.Location = new System.Drawing.Point(368, 118);
-            this.quantityLabel.Name = "quantityLabel";
-            this.quantityLabel.Size = new System.Drawing.Size(55, 16);
-            this.quantityLabel.TabIndex = 28;
-            this.quantityLabel.Text = "Quantity";
-            // 
-            // updateBtn
-            // 
-            this.updateBtn.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateBtn.ForeColor = System.Drawing.Color.SeaShell;
-            this.updateBtn.Location = new System.Drawing.Point(25, 84);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(107, 27);
-            this.updateBtn.TabIndex = 23;
-            this.updateBtn.Text = "Update";
-            this.updateBtn.UseVisualStyleBackColor = false;
-            // 
-            // addBtn
-            // 
-            this.addBtn.BackColor = System.Drawing.Color.ForestGreen;
-            this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.ForeColor = System.Drawing.Color.SeaShell;
-            this.addBtn.Location = new System.Drawing.Point(25, 32);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(107, 27);
-            this.addBtn.TabIndex = 22;
-            this.addBtn.Text = "Add";
-            this.addBtn.UseVisualStyleBackColor = false;
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.BackColor = System.Drawing.Color.Crimson;
-            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.ForeColor = System.Drawing.Color.SeaShell;
-            this.deleteBtn.Location = new System.Drawing.Point(25, 135);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(107, 27);
-            this.deleteBtn.TabIndex = 24;
-            this.deleteBtn.Text = "Delete";
-            this.deleteBtn.UseVisualStyleBackColor = false;
-            // 
-            // quantityTextBox
-            // 
-            this.quantityTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityTextBox.Location = new System.Drawing.Point(429, 115);
-            this.quantityTextBox.Name = "quantityTextBox";
-            this.quantityTextBox.Size = new System.Drawing.Size(225, 22);
-            this.quantityTextBox.TabIndex = 26;
             // 
             // tablePanel
             // 
             this.tablePanel.BackColor = System.Drawing.Color.SeaShell;
             this.tablePanel.Controls.Add(this.dataGridView1);
-            this.tablePanel.Controls.Add(this.inventoryDataGridView);
             this.tablePanel.Controls.Add(this.orderLabel);
             this.tablePanel.Controls.Add(this.searchLabel);
             this.tablePanel.Controls.Add(this.searchTextBox);
             this.tablePanel.Location = new System.Drawing.Point(250, 22);
             this.tablePanel.Name = "tablePanel";
-            this.tablePanel.Size = new System.Drawing.Size(906, 398);
+            this.tablePanel.Size = new System.Drawing.Size(906, 594);
             this.tablePanel.TabIndex = 41;
             // 
-            // inventoryDataGridView
+            // dataGridView1
             // 
-            this.inventoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.inventoryDataGridView.BackgroundColor = System.Drawing.Color.Snow;
-            this.inventoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.inventoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.OrderID,
-            this.ProductName,
-            this.Quantity,
-            this.TotalAmount});
-            this.inventoryDataGridView.Location = new System.Drawing.Point(25, 56);
-            this.inventoryDataGridView.Name = "inventoryDataGridView";
-            this.inventoryDataGridView.Size = new System.Drawing.Size(860, 316);
-            this.inventoryDataGridView.TabIndex = 28;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Snow;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView1.Location = new System.Drawing.Point(25, 53);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(860, 498);
+            this.dataGridView1.TabIndex = 29;
             // 
-            // OrderID
+            // dataGridViewTextBoxColumn1
             // 
-            this.OrderID.HeaderText = "OrderID";
-            this.OrderID.Name = "OrderID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "OrderID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // ProductName
+            // dataGridViewTextBoxColumn2
             // 
-            this.ProductName.HeaderText = "Product Name";
-            this.ProductName.Name = "ProductName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Product Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // Quantity
+            // dataGridViewTextBoxColumn3
             // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // TotalAmount
+            // dataGridViewTextBoxColumn4
             // 
-            this.TotalAmount.HeaderText = "Total Amount";
-            this.TotalAmount.Name = "TotalAmount";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Total Amount";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // orderLabel
             // 
@@ -375,75 +269,28 @@
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Snow;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dataGridView1.Location = new System.Drawing.Point(23, 41);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(860, 316);
-            this.dataGridView1.TabIndex = 29;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "OrderID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Product Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Quantity";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Total Amount";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
             // order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1184, 661);
-            this.Controls.Add(this.crudPanel);
             this.Controls.Add(this.tablePanel);
             this.Controls.Add(this.navbarPanel);
             this.Name = "order";
             this.Text = "Flora - Order";
-            this.crudPanel.ResumeLayout(false);
-            this.crudPanel.PerformLayout();
             this.tablePanel.ResumeLayout(false);
             this.tablePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.navbarPanel.ResumeLayout(false);
             this.navbarPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel crudPanel;
-        private System.Windows.Forms.Label quantityLabel;
-        private System.Windows.Forms.Button updateBtn;
-        private System.Windows.Forms.Button addBtn;
-        private System.Windows.Forms.Button deleteBtn;
-        private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.Panel tablePanel;
-        private System.Windows.Forms.DataGridView inventoryDataGridView;
         private System.Windows.Forms.Label orderLabel;
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox searchTextBox;
@@ -457,12 +304,6 @@
         private System.Windows.Forms.Button customerBtn;
         private System.Windows.Forms.Button adminBtn;
         private System.Windows.Forms.PictureBox logo;
-        private System.Windows.Forms.Label productNameLabel;
-        private System.Windows.Forms.TextBox productNameTextBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

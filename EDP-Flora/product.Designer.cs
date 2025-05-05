@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(product));
             this.crudPanel = new System.Windows.Forms.Panel();
-            this.supplierNameLabel = new System.Windows.Forms.Label();
-            this.supplierNameTextBox = new System.Windows.Forms.TextBox();
+            this.categoryIDLabel = new System.Windows.Forms.Label();
             this.productNameLabel = new System.Windows.Forms.Label();
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.priceLabel = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.customerBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.categoryIDComboBox = new System.Windows.Forms.ComboBox();
             this.crudPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).BeginInit();
@@ -71,8 +71,8 @@
             // crudPanel
             // 
             this.crudPanel.BackColor = System.Drawing.Color.SeaShell;
-            this.crudPanel.Controls.Add(this.supplierNameLabel);
-            this.crudPanel.Controls.Add(this.supplierNameTextBox);
+            this.crudPanel.Controls.Add(this.categoryIDComboBox);
+            this.crudPanel.Controls.Add(this.categoryIDLabel);
             this.crudPanel.Controls.Add(this.productNameLabel);
             this.crudPanel.Controls.Add(this.priceTextBox);
             this.crudPanel.Controls.Add(this.priceLabel);
@@ -87,24 +87,16 @@
             this.crudPanel.Size = new System.Drawing.Size(906, 193);
             this.crudPanel.TabIndex = 45;
             // 
-            // supplierNameLabel
+            // categoryIDLabel
             // 
-            this.supplierNameLabel.AutoSize = true;
-            this.supplierNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supplierNameLabel.Location = new System.Drawing.Point(557, 111);
-            this.supplierNameLabel.Name = "supplierNameLabel";
-            this.supplierNameLabel.Size = new System.Drawing.Size(97, 16);
-            this.supplierNameLabel.TabIndex = 34;
-            this.supplierNameLabel.Text = "Supplier Name";
-            this.supplierNameLabel.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // supplierNameTextBox
-            // 
-            this.supplierNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supplierNameTextBox.Location = new System.Drawing.Point(659, 108);
-            this.supplierNameTextBox.Name = "supplierNameTextBox";
-            this.supplierNameTextBox.Size = new System.Drawing.Size(225, 22);
-            this.supplierNameTextBox.TabIndex = 33;
+            this.categoryIDLabel.AutoSize = true;
+            this.categoryIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryIDLabel.Location = new System.Drawing.Point(575, 111);
+            this.categoryIDLabel.Name = "categoryIDLabel";
+            this.categoryIDLabel.Size = new System.Drawing.Size(78, 16);
+            this.categoryIDLabel.TabIndex = 34;
+            this.categoryIDLabel.Text = "Category ID";
+            this.categoryIDLabel.Click += new System.EventHandler(this.label3_Click);
             // 
             // productNameLabel
             // 
@@ -420,6 +412,15 @@
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
             // 
+            // categoryIDComboBox
+            // 
+            this.categoryIDComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryIDComboBox.FormattingEnabled = true;
+            this.categoryIDComboBox.Location = new System.Drawing.Point(659, 104);
+            this.categoryIDComboBox.Name = "categoryIDComboBox";
+            this.categoryIDComboBox.Size = new System.Drawing.Size(225, 24);
+            this.categoryIDComboBox.TabIndex = 35;
+            // 
             // product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,8 +447,7 @@
         #endregion
 
         private System.Windows.Forms.Panel crudPanel;
-        private System.Windows.Forms.Label supplierNameLabel;
-        private System.Windows.Forms.TextBox supplierNameTextBox;
+        private System.Windows.Forms.Label categoryIDLabel;
         private System.Windows.Forms.Label productNameLabel;
         private System.Windows.Forms.TextBox priceTextBox;
         private System.Windows.Forms.Label priceLabel;
@@ -477,5 +477,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
+        private System.Windows.Forms.ComboBox categoryIDComboBox;
     }
 }

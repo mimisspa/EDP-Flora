@@ -40,6 +40,7 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.tablePanel = new System.Windows.Forms.Panel();
+            this.exportBtn = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
             this.reloadBtn = new System.Windows.Forms.Button();
             this.adminDataGridView = new System.Windows.Forms.DataGridView();
@@ -56,7 +57,6 @@
             this.customerBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.exportBtn = new System.Windows.Forms.Button();
             this.crudPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDataGridView)).BeginInit();
@@ -135,7 +135,7 @@
             this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateBtn.ForeColor = System.Drawing.Color.SeaShell;
-            this.updateBtn.Location = new System.Drawing.Point(25, 84);
+            this.updateBtn.Location = new System.Drawing.Point(25, 85);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(107, 27);
             this.updateBtn.TabIndex = 23;
@@ -149,7 +149,7 @@
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.ForeColor = System.Drawing.Color.SeaShell;
-            this.addBtn.Location = new System.Drawing.Point(25, 32);
+            this.addBtn.Location = new System.Drawing.Point(25, 35);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(107, 27);
             this.addBtn.TabIndex = 22;
@@ -163,7 +163,7 @@
             this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBtn.ForeColor = System.Drawing.Color.SeaShell;
-            this.deleteBtn.Location = new System.Drawing.Point(25, 135);
+            this.deleteBtn.Location = new System.Drawing.Point(25, 133);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(107, 27);
             this.deleteBtn.TabIndex = 24;
@@ -195,6 +195,20 @@
             this.tablePanel.TabIndex = 32;
             this.tablePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tablePanel_Paint);
             // 
+            // exportBtn
+            // 
+            this.exportBtn.BackColor = System.Drawing.Color.DarkSalmon;
+            this.exportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBtn.ForeColor = System.Drawing.Color.Snow;
+            this.exportBtn.Location = new System.Drawing.Point(778, 360);
+            this.exportBtn.Name = "exportBtn";
+            this.exportBtn.Size = new System.Drawing.Size(107, 27);
+            this.exportBtn.TabIndex = 32;
+            this.exportBtn.Text = "Export";
+            this.exportBtn.UseVisualStyleBackColor = false;
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
+            // 
             // searchBtn
             // 
             this.searchBtn.BackColor = System.Drawing.Color.MistyRose;
@@ -217,7 +231,7 @@
             this.reloadBtn.ForeColor = System.Drawing.Color.Maroon;
             this.reloadBtn.Location = new System.Drawing.Point(25, 360);
             this.reloadBtn.Name = "reloadBtn";
-            this.reloadBtn.Size = new System.Drawing.Size(75, 23);
+            this.reloadBtn.Size = new System.Drawing.Size(107, 27);
             this.reloadBtn.TabIndex = 30;
             this.reloadBtn.Text = "Reload";
             this.reloadBtn.UseVisualStyleBackColor = false;
@@ -409,17 +423,6 @@
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
-            // 
-            // exportBtn
-            // 
-            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exportBtn.Location = new System.Drawing.Point(810, 360);
-            this.exportBtn.Name = "exportBtn";
-            this.exportBtn.Size = new System.Drawing.Size(75, 23);
-            this.exportBtn.TabIndex = 32;
-            this.exportBtn.Text = "Export";
-            this.exportBtn.UseVisualStyleBackColor = true;
-            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
             // 
             // admin
             // 

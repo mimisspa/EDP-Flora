@@ -29,18 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sale));
-            this.crudPanel = new System.Windows.Forms.Panel();
-            this.paymentMethodComboBox = new System.Windows.Forms.ComboBox();
-            this.paymentDateDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.paymentDateLabel = new System.Windows.Forms.Label();
-            this.orderNoLabel = new System.Windows.Forms.Label();
-            this.totalAmountTextBox = new System.Windows.Forms.TextBox();
-            this.totalAmountLabel = new System.Windows.Forms.Label();
-            this.orderNoTextBox = new System.Windows.Forms.TextBox();
-            this.quantityLabel = new System.Windows.Forms.Label();
-            this.updateBtn = new System.Windows.Forms.Button();
-            this.addBtn = new System.Windows.Forms.Button();
-            this.deleteBtn = new System.Windows.Forms.Button();
             this.tablePanel = new System.Windows.Forms.Panel();
             this.inventoryDataGridView = new System.Windows.Forms.DataGridView();
             this.SalesID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,147 +49,11 @@
             this.customerBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.crudPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).BeginInit();
             this.navbarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // crudPanel
-            // 
-            this.crudPanel.BackColor = System.Drawing.Color.SeaShell;
-            this.crudPanel.Controls.Add(this.paymentMethodComboBox);
-            this.crudPanel.Controls.Add(this.paymentDateDatePicker);
-            this.crudPanel.Controls.Add(this.paymentDateLabel);
-            this.crudPanel.Controls.Add(this.orderNoLabel);
-            this.crudPanel.Controls.Add(this.totalAmountTextBox);
-            this.crudPanel.Controls.Add(this.totalAmountLabel);
-            this.crudPanel.Controls.Add(this.orderNoTextBox);
-            this.crudPanel.Controls.Add(this.quantityLabel);
-            this.crudPanel.Controls.Add(this.updateBtn);
-            this.crudPanel.Controls.Add(this.addBtn);
-            this.crudPanel.Controls.Add(this.deleteBtn);
-            this.crudPanel.Location = new System.Drawing.Point(250, 446);
-            this.crudPanel.Name = "crudPanel";
-            this.crudPanel.Size = new System.Drawing.Size(906, 193);
-            this.crudPanel.TabIndex = 48;
-            // 
-            // paymentMethodComboBox
-            // 
-            this.paymentMethodComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paymentMethodComboBox.FormattingEnabled = true;
-            this.paymentMethodComboBox.Items.AddRange(new object[] {
-            "Credit Card",
-            "Cash"});
-            this.paymentMethodComboBox.Location = new System.Drawing.Point(660, 60);
-            this.paymentMethodComboBox.Name = "paymentMethodComboBox";
-            this.paymentMethodComboBox.Size = new System.Drawing.Size(224, 24);
-            this.paymentMethodComboBox.TabIndex = 36;
-            // 
-            // paymentDateDatePicker
-            // 
-            this.paymentDateDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paymentDateDatePicker.Location = new System.Drawing.Point(660, 109);
-            this.paymentDateDatePicker.Name = "paymentDateDatePicker";
-            this.paymentDateDatePicker.Size = new System.Drawing.Size(224, 22);
-            this.paymentDateDatePicker.TabIndex = 35;
-            // 
-            // paymentDateLabel
-            // 
-            this.paymentDateLabel.AutoSize = true;
-            this.paymentDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paymentDateLabel.Location = new System.Drawing.Point(562, 112);
-            this.paymentDateLabel.Name = "paymentDateLabel";
-            this.paymentDateLabel.Size = new System.Drawing.Size(92, 16);
-            this.paymentDateLabel.TabIndex = 34;
-            this.paymentDateLabel.Text = "Payment Date";
-            this.paymentDateLabel.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // orderNoLabel
-            // 
-            this.orderNoLabel.AutoSize = true;
-            this.orderNoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderNoLabel.Location = new System.Drawing.Point(179, 62);
-            this.orderNoLabel.Name = "orderNoLabel";
-            this.orderNoLabel.Size = new System.Drawing.Size(92, 16);
-            this.orderNoLabel.TabIndex = 32;
-            this.orderNoLabel.Text = "Order Number";
-            // 
-            // totalAmountTextBox
-            // 
-            this.totalAmountTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalAmountTextBox.Location = new System.Drawing.Point(277, 109);
-            this.totalAmountTextBox.Name = "totalAmountTextBox";
-            this.totalAmountTextBox.Size = new System.Drawing.Size(225, 22);
-            this.totalAmountTextBox.TabIndex = 31;
-            // 
-            // totalAmountLabel
-            // 
-            this.totalAmountLabel.AutoSize = true;
-            this.totalAmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalAmountLabel.Location = new System.Drawing.Point(185, 112);
-            this.totalAmountLabel.Name = "totalAmountLabel";
-            this.totalAmountLabel.Size = new System.Drawing.Size(86, 16);
-            this.totalAmountLabel.TabIndex = 30;
-            this.totalAmountLabel.Text = "Total Amount";
-            // 
-            // orderNoTextBox
-            // 
-            this.orderNoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderNoTextBox.Location = new System.Drawing.Point(277, 59);
-            this.orderNoTextBox.Name = "orderNoTextBox";
-            this.orderNoTextBox.Size = new System.Drawing.Size(225, 22);
-            this.orderNoTextBox.TabIndex = 29;
-            // 
-            // quantityLabel
-            // 
-            this.quantityLabel.AutoSize = true;
-            this.quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityLabel.Location = new System.Drawing.Point(546, 62);
-            this.quantityLabel.Name = "quantityLabel";
-            this.quantityLabel.Size = new System.Drawing.Size(108, 16);
-            this.quantityLabel.TabIndex = 28;
-            this.quantityLabel.Text = "Payment Method";
-            // 
-            // updateBtn
-            // 
-            this.updateBtn.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateBtn.ForeColor = System.Drawing.Color.SeaShell;
-            this.updateBtn.Location = new System.Drawing.Point(25, 84);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(107, 27);
-            this.updateBtn.TabIndex = 23;
-            this.updateBtn.Text = "Update";
-            this.updateBtn.UseVisualStyleBackColor = false;
-            // 
-            // addBtn
-            // 
-            this.addBtn.BackColor = System.Drawing.Color.ForestGreen;
-            this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.ForeColor = System.Drawing.Color.SeaShell;
-            this.addBtn.Location = new System.Drawing.Point(25, 32);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(107, 27);
-            this.addBtn.TabIndex = 22;
-            this.addBtn.Text = "Add";
-            this.addBtn.UseVisualStyleBackColor = false;
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.BackColor = System.Drawing.Color.Crimson;
-            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.ForeColor = System.Drawing.Color.SeaShell;
-            this.deleteBtn.Location = new System.Drawing.Point(25, 135);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(107, 27);
-            this.deleteBtn.TabIndex = 24;
-            this.deleteBtn.Text = "Delete";
-            this.deleteBtn.UseVisualStyleBackColor = false;
             // 
             // tablePanel
             // 
@@ -212,7 +64,7 @@
             this.tablePanel.Controls.Add(this.searchTextBox);
             this.tablePanel.Location = new System.Drawing.Point(250, 22);
             this.tablePanel.Name = "tablePanel";
-            this.tablePanel.Size = new System.Drawing.Size(906, 398);
+            this.tablePanel.Size = new System.Drawing.Size(906, 594);
             this.tablePanel.TabIndex = 47;
             // 
             // inventoryDataGridView
@@ -228,7 +80,7 @@
             this.PaymentDate});
             this.inventoryDataGridView.Location = new System.Drawing.Point(25, 56);
             this.inventoryDataGridView.Name = "inventoryDataGridView";
-            this.inventoryDataGridView.Size = new System.Drawing.Size(860, 316);
+            this.inventoryDataGridView.Size = new System.Drawing.Size(860, 496);
             this.inventoryDataGridView.TabIndex = 28;
             // 
             // SalesID
@@ -429,13 +281,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1184, 661);
-            this.Controls.Add(this.crudPanel);
             this.Controls.Add(this.tablePanel);
             this.Controls.Add(this.navbarPanel);
             this.Name = "sale";
             this.Text = "Flora - Sales";
-            this.crudPanel.ResumeLayout(false);
-            this.crudPanel.PerformLayout();
             this.tablePanel.ResumeLayout(false);
             this.tablePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).EndInit();
@@ -447,17 +296,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel crudPanel;
-        private System.Windows.Forms.Label paymentDateLabel;
-        private System.Windows.Forms.Label orderNoLabel;
-        private System.Windows.Forms.TextBox totalAmountTextBox;
-        private System.Windows.Forms.Label totalAmountLabel;
-        private System.Windows.Forms.TextBox orderNoTextBox;
-        private System.Windows.Forms.Label quantityLabel;
-        private System.Windows.Forms.Button updateBtn;
-        private System.Windows.Forms.Button addBtn;
-        private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Panel tablePanel;
         private System.Windows.Forms.DataGridView inventoryDataGridView;
         private System.Windows.Forms.Label inventoryLabel;
@@ -473,12 +311,10 @@
         private System.Windows.Forms.Button customerBtn;
         private System.Windows.Forms.Button adminBtn;
         private System.Windows.Forms.PictureBox logo;
-        private System.Windows.Forms.DateTimePicker paymentDateDatePicker;
         private System.Windows.Forms.DataGridViewTextBoxColumn SalesID;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderID;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentMethod;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentDate;
-        private System.Windows.Forms.ComboBox paymentMethodComboBox;
     }
 }

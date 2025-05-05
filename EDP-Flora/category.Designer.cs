@@ -36,15 +36,15 @@
             this.updateBtn = new System.Windows.Forms.Button();
             this.addBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
-            this.quantityTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.tablePanel = new System.Windows.Forms.Panel();
-            this.inventoryDataGridView = new System.Windows.Forms.DataGridView();
-            this.InventoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inventoryLabel = new System.Windows.Forms.Label();
+            this.exportBtn = new System.Windows.Forms.Button();
+            this.reloadBtn = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.categoryDataGridView = new System.Windows.Forms.DataGridView();
+            this.categoryLabel = new System.Windows.Forms.Label();
             this.navbarPanel = new System.Windows.Forms.Panel();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.supplierBtn = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             this.logo = new System.Windows.Forms.PictureBox();
             this.crudPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).BeginInit();
             this.navbarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +71,7 @@
             this.crudPanel.Controls.Add(this.updateBtn);
             this.crudPanel.Controls.Add(this.addBtn);
             this.crudPanel.Controls.Add(this.deleteBtn);
-            this.crudPanel.Controls.Add(this.quantityTextBox);
+            this.crudPanel.Controls.Add(this.descriptionTextBox);
             this.crudPanel.Location = new System.Drawing.Point(250, 446);
             this.crudPanel.Name = "crudPanel";
             this.crudPanel.Size = new System.Drawing.Size(906, 193);
@@ -99,11 +99,11 @@
             // 
             this.quantityLabel.AutoSize = true;
             this.quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityLabel.Location = new System.Drawing.Point(345, 114);
+            this.quantityLabel.Location = new System.Drawing.Point(325, 114);
             this.quantityLabel.Name = "quantityLabel";
-            this.quantityLabel.Size = new System.Drawing.Size(55, 16);
+            this.quantityLabel.Size = new System.Drawing.Size(75, 16);
             this.quantityLabel.TabIndex = 28;
-            this.quantityLabel.Text = "Quantity";
+            this.quantityLabel.Text = "Description";
             // 
             // updateBtn
             // 
@@ -117,6 +117,7 @@
             this.updateBtn.TabIndex = 23;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // addBtn
             // 
@@ -130,6 +131,7 @@
             this.addBtn.TabIndex = 22;
             this.addBtn.Text = "Add";
             this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // deleteBtn
             // 
@@ -143,83 +145,112 @@
             this.deleteBtn.TabIndex = 24;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
-            // quantityTextBox
+            // descriptionTextBox
             // 
-            this.quantityTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityTextBox.Location = new System.Drawing.Point(406, 111);
-            this.quantityTextBox.Name = "quantityTextBox";
-            this.quantityTextBox.Size = new System.Drawing.Size(225, 22);
-            this.quantityTextBox.TabIndex = 26;
+            this.descriptionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionTextBox.Location = new System.Drawing.Point(406, 111);
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(225, 22);
+            this.descriptionTextBox.TabIndex = 26;
             // 
             // tablePanel
             // 
             this.tablePanel.BackColor = System.Drawing.Color.SeaShell;
-            this.tablePanel.Controls.Add(this.inventoryDataGridView);
-            this.tablePanel.Controls.Add(this.inventoryLabel);
+            this.tablePanel.Controls.Add(this.exportBtn);
+            this.tablePanel.Controls.Add(this.reloadBtn);
+            this.tablePanel.Controls.Add(this.searchBtn);
             this.tablePanel.Controls.Add(this.searchLabel);
             this.tablePanel.Controls.Add(this.searchTextBox);
+            this.tablePanel.Controls.Add(this.categoryDataGridView);
+            this.tablePanel.Controls.Add(this.categoryLabel);
             this.tablePanel.Location = new System.Drawing.Point(250, 22);
             this.tablePanel.Name = "tablePanel";
             this.tablePanel.Size = new System.Drawing.Size(906, 398);
             this.tablePanel.TabIndex = 38;
+            this.tablePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tablePanel_Paint);
             // 
-            // inventoryDataGridView
+            // exportBtn
             // 
-            this.inventoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.inventoryDataGridView.BackgroundColor = System.Drawing.Color.Snow;
-            this.inventoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.inventoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.InventoryID,
-            this.ProductName,
-            this.Quantity});
-            this.inventoryDataGridView.Location = new System.Drawing.Point(25, 56);
-            this.inventoryDataGridView.Name = "inventoryDataGridView";
-            this.inventoryDataGridView.Size = new System.Drawing.Size(860, 316);
-            this.inventoryDataGridView.TabIndex = 28;
+            this.exportBtn.BackColor = System.Drawing.Color.DarkSalmon;
+            this.exportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBtn.ForeColor = System.Drawing.Color.Snow;
+            this.exportBtn.Location = new System.Drawing.Point(777, 352);
+            this.exportBtn.Name = "exportBtn";
+            this.exportBtn.Size = new System.Drawing.Size(107, 27);
+            this.exportBtn.TabIndex = 36;
+            this.exportBtn.Text = "Export";
+            this.exportBtn.UseVisualStyleBackColor = false;
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
             // 
-            // InventoryID
+            // reloadBtn
             // 
-            this.InventoryID.HeaderText = "InventoryID";
-            this.InventoryID.Name = "InventoryID";
+            this.reloadBtn.BackColor = System.Drawing.Color.MistyRose;
+            this.reloadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.reloadBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reloadBtn.ForeColor = System.Drawing.Color.Maroon;
+            this.reloadBtn.Location = new System.Drawing.Point(25, 352);
+            this.reloadBtn.Name = "reloadBtn";
+            this.reloadBtn.Size = new System.Drawing.Size(107, 27);
+            this.reloadBtn.TabIndex = 35;
+            this.reloadBtn.Text = "Reload";
+            this.reloadBtn.UseVisualStyleBackColor = false;
+            this.reloadBtn.Click += new System.EventHandler(this.reloadBtn_Click);
             // 
-            // ProductName
+            // searchBtn
             // 
-            this.ProductName.HeaderText = "Name";
-            this.ProductName.Name = "ProductName";
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
-            // 
-            // inventoryLabel
-            // 
-            this.inventoryLabel.AutoSize = true;
-            this.inventoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventoryLabel.Location = new System.Drawing.Point(20, 19);
-            this.inventoryLabel.Name = "inventoryLabel";
-            this.inventoryLabel.Size = new System.Drawing.Size(107, 25);
-            this.inventoryLabel.TabIndex = 20;
-            this.inventoryLabel.Text = "Category";
+            this.searchBtn.BackColor = System.Drawing.Color.MistyRose;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.ForeColor = System.Drawing.Color.Maroon;
+            this.searchBtn.Location = new System.Drawing.Point(813, 21);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(71, 23);
+            this.searchBtn.TabIndex = 34;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // searchLabel
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(604, 26);
+            this.searchLabel.Location = new System.Drawing.Point(525, 24);
             this.searchLabel.Name = "searchLabel";
             this.searchLabel.Size = new System.Drawing.Size(50, 16);
-            this.searchLabel.TabIndex = 27;
+            this.searchLabel.TabIndex = 33;
             this.searchLabel.Text = "Search";
             // 
             // searchTextBox
             // 
             this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTextBox.Location = new System.Drawing.Point(660, 23);
+            this.searchTextBox.Location = new System.Drawing.Point(581, 21);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(225, 22);
-            this.searchTextBox.TabIndex = 26;
+            this.searchTextBox.TabIndex = 32;
+            // 
+            // categoryDataGridView
+            // 
+            this.categoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.categoryDataGridView.BackgroundColor = System.Drawing.Color.Snow;
+            this.categoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.categoryDataGridView.Location = new System.Drawing.Point(25, 56);
+            this.categoryDataGridView.Name = "categoryDataGridView";
+            this.categoryDataGridView.Size = new System.Drawing.Size(860, 290);
+            this.categoryDataGridView.TabIndex = 28;
+            this.categoryDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.categoryDataGridView_CellContentClick);
+            // 
+            // categoryLabel
+            // 
+            this.categoryLabel.AutoSize = true;
+            this.categoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryLabel.Location = new System.Drawing.Point(25, 20);
+            this.categoryLabel.Name = "categoryLabel";
+            this.categoryLabel.Size = new System.Drawing.Size(107, 25);
+            this.categoryLabel.TabIndex = 20;
+            this.categoryLabel.Text = "Category";
             // 
             // navbarPanel
             // 
@@ -378,13 +409,14 @@
             this.Controls.Add(this.navbarPanel);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "category";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Flora - Category";
             this.Load += new System.EventHandler(this.inventory_Load);
             this.crudPanel.ResumeLayout(false);
             this.crudPanel.PerformLayout();
             this.tablePanel.ResumeLayout(false);
             this.tablePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).EndInit();
             this.navbarPanel.ResumeLayout(false);
             this.navbarPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
@@ -401,14 +433,9 @@
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button deleteBtn;
-        private System.Windows.Forms.TextBox quantityTextBox;
+        private System.Windows.Forms.TextBox descriptionTextBox;
         private System.Windows.Forms.Panel tablePanel;
-        private System.Windows.Forms.DataGridView inventoryDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InventoryID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.Label searchLabel;
-        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.DataGridView categoryDataGridView;
         private System.Windows.Forms.Panel navbarPanel;
         private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.Button supplierBtn;
@@ -419,6 +446,11 @@
         private System.Windows.Forms.Button customerBtn;
         private System.Windows.Forms.Button adminBtn;
         private System.Windows.Forms.PictureBox logo;
-        private System.Windows.Forms.Label inventoryLabel;
+        private System.Windows.Forms.Label categoryLabel;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.Label searchLabel;
+        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.Button exportBtn;
+        private System.Windows.Forms.Button reloadBtn;
     }
 }

@@ -42,14 +42,13 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.tablePanel = new System.Windows.Forms.Panel();
-            this.customerDataGridView = new System.Windows.Forms.DataGridView();
-            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerLabel = new System.Windows.Forms.Label();
+            this.exportBtn = new System.Windows.Forms.Button();
+            this.reloadBtn = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.customerDataGridView = new System.Windows.Forms.DataGridView();
+            this.customerLabel = new System.Windows.Forms.Label();
             this.navbarPanel = new System.Windows.Forms.Panel();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.supplierBtn = new System.Windows.Forms.Button();
@@ -162,6 +161,7 @@
             this.updateBtn.TabIndex = 23;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // addBtn
             // 
@@ -175,6 +175,7 @@
             this.addBtn.TabIndex = 22;
             this.addBtn.Text = "Add";
             this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // deleteBtn
             // 
@@ -188,6 +189,7 @@
             this.deleteBtn.TabIndex = 24;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // emailTextBox
             // 
@@ -200,49 +202,88 @@
             // tablePanel
             // 
             this.tablePanel.BackColor = System.Drawing.Color.SeaShell;
-            this.tablePanel.Controls.Add(this.customerDataGridView);
-            this.tablePanel.Controls.Add(this.customerLabel);
+            this.tablePanel.Controls.Add(this.exportBtn);
+            this.tablePanel.Controls.Add(this.reloadBtn);
+            this.tablePanel.Controls.Add(this.searchBtn);
             this.tablePanel.Controls.Add(this.searchLabel);
             this.tablePanel.Controls.Add(this.searchTextBox);
+            this.tablePanel.Controls.Add(this.customerDataGridView);
+            this.tablePanel.Controls.Add(this.customerLabel);
             this.tablePanel.Location = new System.Drawing.Point(249, 24);
             this.tablePanel.Name = "tablePanel";
             this.tablePanel.Size = new System.Drawing.Size(906, 398);
             this.tablePanel.TabIndex = 35;
+            // 
+            // exportBtn
+            // 
+            this.exportBtn.BackColor = System.Drawing.Color.DarkSalmon;
+            this.exportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBtn.ForeColor = System.Drawing.Color.Snow;
+            this.exportBtn.Location = new System.Drawing.Point(778, 363);
+            this.exportBtn.Name = "exportBtn";
+            this.exportBtn.Size = new System.Drawing.Size(107, 27);
+            this.exportBtn.TabIndex = 36;
+            this.exportBtn.Text = "Export";
+            this.exportBtn.UseVisualStyleBackColor = false;
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
+            // 
+            // reloadBtn
+            // 
+            this.reloadBtn.BackColor = System.Drawing.Color.MistyRose;
+            this.reloadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.reloadBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reloadBtn.ForeColor = System.Drawing.Color.Maroon;
+            this.reloadBtn.Location = new System.Drawing.Point(25, 363);
+            this.reloadBtn.Name = "reloadBtn";
+            this.reloadBtn.Size = new System.Drawing.Size(107, 27);
+            this.reloadBtn.TabIndex = 35;
+            this.reloadBtn.Text = "Reload";
+            this.reloadBtn.UseVisualStyleBackColor = false;
+            this.reloadBtn.Click += new System.EventHandler(this.reloadBtn_Click);
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.MistyRose;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.ForeColor = System.Drawing.Color.Maroon;
+            this.searchBtn.Location = new System.Drawing.Point(812, 22);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(71, 23);
+            this.searchBtn.TabIndex = 34;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // searchLabel
+            // 
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchLabel.Location = new System.Drawing.Point(524, 25);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(50, 16);
+            this.searchLabel.TabIndex = 33;
+            this.searchLabel.Text = "Search";
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextBox.Location = new System.Drawing.Point(580, 22);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(225, 22);
+            this.searchTextBox.TabIndex = 32;
             // 
             // customerDataGridView
             // 
             this.customerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.customerDataGridView.BackgroundColor = System.Drawing.Color.Snow;
             this.customerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CustomerID,
-            this.CustomerAddress,
-            this.CustomerName,
-            this.CustomerEmail});
             this.customerDataGridView.Location = new System.Drawing.Point(25, 56);
             this.customerDataGridView.Name = "customerDataGridView";
-            this.customerDataGridView.Size = new System.Drawing.Size(860, 316);
+            this.customerDataGridView.Size = new System.Drawing.Size(860, 301);
             this.customerDataGridView.TabIndex = 28;
-            // 
-            // CustomerID
-            // 
-            this.CustomerID.HeaderText = "CustomerID";
-            this.CustomerID.Name = "CustomerID";
-            // 
-            // CustomerAddress
-            // 
-            this.CustomerAddress.HeaderText = "Address";
-            this.CustomerAddress.Name = "CustomerAddress";
-            // 
-            // CustomerName
-            // 
-            this.CustomerName.HeaderText = "Name";
-            this.CustomerName.Name = "CustomerName";
-            // 
-            // CustomerEmail
-            // 
-            this.CustomerEmail.HeaderText = "Email";
-            this.CustomerEmail.Name = "CustomerEmail";
+            this.customerDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerDataGridView_CellContentClick);
             // 
             // customerLabel
             // 
@@ -253,24 +294,6 @@
             this.customerLabel.Size = new System.Drawing.Size(112, 25);
             this.customerLabel.TabIndex = 20;
             this.customerLabel.Text = "Customer";
-            // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(604, 26);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(50, 16);
-            this.searchLabel.TabIndex = 27;
-            this.searchLabel.Text = "Search";
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTextBox.Location = new System.Drawing.Point(660, 23);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(225, 22);
-            this.searchTextBox.TabIndex = 26;
             // 
             // navbarPanel
             // 
@@ -421,7 +444,9 @@
             this.Controls.Add(this.tablePanel);
             this.Controls.Add(this.navbarPanel);
             this.Name = "customer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Flora - Customer";
+            this.Load += new System.EventHandler(this.customer_Load);
             this.crudPanel.ResumeLayout(false);
             this.crudPanel.PerformLayout();
             this.tablePanel.ResumeLayout(false);
@@ -450,13 +475,7 @@
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Panel tablePanel;
         private System.Windows.Forms.DataGridView customerDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerEmail;
         private System.Windows.Forms.Label customerLabel;
-        private System.Windows.Forms.Label searchLabel;
-        private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Panel navbarPanel;
         private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.Button supplierBtn;
@@ -467,5 +486,10 @@
         private System.Windows.Forms.Button customerBtn;
         private System.Windows.Forms.Button adminBtn;
         private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.Label searchLabel;
+        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.Button exportBtn;
+        private System.Windows.Forms.Button reloadBtn;
     }
 }
