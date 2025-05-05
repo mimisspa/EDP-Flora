@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace EDP_Flora
 {
-    public partial class Form1 : Form
+    public partial class order : Form
     {
-        public Form1()
+        public order()
         {
             InitializeComponent();
         }
 
         private void nameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void orderLabel_Click(object sender, EventArgs e)
         {
 
         }

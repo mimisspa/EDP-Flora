@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+
 
 namespace EDP_Flora
 {
@@ -17,7 +20,31 @@ namespace EDP_Flora
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        string connectionString = "server=localhost;database=floweryflowers;uid=root;password= ;";
+        MySqlConnection connection;
+
+        private void InitializeConnection()
+        {
+            connection = new MySqlConnection(connectionString);
+            connection.Open();
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }

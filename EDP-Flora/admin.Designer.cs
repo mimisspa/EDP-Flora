@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(admin));
             this.crudPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.securityAnsTextBox = new System.Windows.Forms.TextBox();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passowrdLabel = new System.Windows.Forms.Label();
@@ -40,10 +40,9 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.tablePanel = new System.Windows.Forms.Panel();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.reloadBtn = new System.Windows.Forms.Button();
             this.adminDataGridView = new System.Windows.Forms.DataGridView();
-            this.AdminID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminLabel = new System.Windows.Forms.Label();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@
             this.customerBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.exportBtn = new System.Windows.Forms.Button();
             this.crudPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDataGridView)).BeginInit();
@@ -68,7 +68,7 @@
             // 
             this.crudPanel.BackColor = System.Drawing.Color.SeaShell;
             this.crudPanel.Controls.Add(this.label1);
-            this.crudPanel.Controls.Add(this.textBox1);
+            this.crudPanel.Controls.Add(this.securityAnsTextBox);
             this.crudPanel.Controls.Add(this.usernameLabel);
             this.crudPanel.Controls.Add(this.usernameTextBox);
             this.crudPanel.Controls.Add(this.passowrdLabel);
@@ -91,13 +91,13 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Security Answer";
             // 
-            // textBox1
+            // securityAnsTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(651, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 22);
-            this.textBox1.TabIndex = 31;
+            this.securityAnsTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.securityAnsTextBox.Location = new System.Drawing.Point(651, 54);
+            this.securityAnsTextBox.Name = "securityAnsTextBox";
+            this.securityAnsTextBox.Size = new System.Drawing.Size(225, 22);
+            this.securityAnsTextBox.TabIndex = 31;
             // 
             // usernameLabel
             // 
@@ -141,6 +141,7 @@
             this.updateBtn.TabIndex = 23;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // addBtn
             // 
@@ -154,6 +155,7 @@
             this.addBtn.TabIndex = 22;
             this.addBtn.Text = "Add";
             this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // deleteBtn
             // 
@@ -167,6 +169,7 @@
             this.deleteBtn.TabIndex = 24;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // passwordTextBox
             // 
@@ -179,6 +182,9 @@
             // tablePanel
             // 
             this.tablePanel.BackColor = System.Drawing.Color.SeaShell;
+            this.tablePanel.Controls.Add(this.exportBtn);
+            this.tablePanel.Controls.Add(this.searchBtn);
+            this.tablePanel.Controls.Add(this.reloadBtn);
             this.tablePanel.Controls.Add(this.adminDataGridView);
             this.tablePanel.Controls.Add(this.adminLabel);
             this.tablePanel.Controls.Add(this.searchLabel);
@@ -187,35 +193,46 @@
             this.tablePanel.Name = "tablePanel";
             this.tablePanel.Size = new System.Drawing.Size(906, 398);
             this.tablePanel.TabIndex = 32;
+            this.tablePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tablePanel_Paint);
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.MistyRose;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.ForeColor = System.Drawing.Color.Maroon;
+            this.searchBtn.Location = new System.Drawing.Point(814, 23);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(71, 23);
+            this.searchBtn.TabIndex = 31;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // reloadBtn
+            // 
+            this.reloadBtn.BackColor = System.Drawing.Color.MistyRose;
+            this.reloadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.reloadBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reloadBtn.ForeColor = System.Drawing.Color.Maroon;
+            this.reloadBtn.Location = new System.Drawing.Point(25, 360);
+            this.reloadBtn.Name = "reloadBtn";
+            this.reloadBtn.Size = new System.Drawing.Size(75, 23);
+            this.reloadBtn.TabIndex = 30;
+            this.reloadBtn.Text = "Reload";
+            this.reloadBtn.UseVisualStyleBackColor = false;
+            this.reloadBtn.Click += new System.EventHandler(this.reloadBtn_Click);
             // 
             // adminDataGridView
             // 
             this.adminDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.adminDataGridView.BackgroundColor = System.Drawing.Color.Snow;
             this.adminDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.adminDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AdminID,
-            this.Username,
-            this.Password});
             this.adminDataGridView.Location = new System.Drawing.Point(25, 56);
             this.adminDataGridView.Name = "adminDataGridView";
-            this.adminDataGridView.Size = new System.Drawing.Size(860, 316);
+            this.adminDataGridView.Size = new System.Drawing.Size(860, 298);
             this.adminDataGridView.TabIndex = 28;
-            // 
-            // AdminID
-            // 
-            this.AdminID.HeaderText = "AdminID";
-            this.AdminID.Name = "AdminID";
-            // 
-            // Username
-            // 
-            this.Username.HeaderText = "Username";
-            this.Username.Name = "Username";
-            // 
-            // Password
-            // 
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
+            this.adminDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adminDataGridView_CellContentClick);
             // 
             // adminLabel
             // 
@@ -231,7 +248,7 @@
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(604, 26);
+            this.searchLabel.Location = new System.Drawing.Point(526, 26);
             this.searchLabel.Name = "searchLabel";
             this.searchLabel.Size = new System.Drawing.Size(50, 16);
             this.searchLabel.TabIndex = 27;
@@ -240,7 +257,7 @@
             // searchTextBox
             // 
             this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTextBox.Location = new System.Drawing.Point(660, 23);
+            this.searchTextBox.Location = new System.Drawing.Point(582, 23);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(225, 22);
             this.searchTextBox.TabIndex = 26;
@@ -261,6 +278,7 @@
             this.navbarPanel.Name = "navbarPanel";
             this.navbarPanel.Size = new System.Drawing.Size(219, 661);
             this.navbarPanel.TabIndex = 31;
+            this.navbarPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.navbarPanel_Paint);
             // 
             // logoutBtn
             // 
@@ -274,6 +292,7 @@
             this.logoutBtn.TabIndex = 29;
             this.logoutBtn.Text = "Log Out";
             this.logoutBtn.UseVisualStyleBackColor = false;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // supplierBtn
             // 
@@ -288,6 +307,7 @@
             this.supplierBtn.TabIndex = 28;
             this.supplierBtn.Text = "Supplier";
             this.supplierBtn.UseVisualStyleBackColor = false;
+            this.supplierBtn.Click += new System.EventHandler(this.supplierBtn_Click);
             // 
             // saleBtn
             // 
@@ -302,6 +322,7 @@
             this.saleBtn.TabIndex = 27;
             this.saleBtn.Text = "Sales";
             this.saleBtn.UseVisualStyleBackColor = false;
+            this.saleBtn.Click += new System.EventHandler(this.saleBtn_Click);
             // 
             // productBtn
             // 
@@ -316,6 +337,7 @@
             this.productBtn.TabIndex = 26;
             this.productBtn.Text = "Product";
             this.productBtn.UseVisualStyleBackColor = false;
+            this.productBtn.Click += new System.EventHandler(this.productBtn_Click);
             // 
             // orderBtn
             // 
@@ -330,6 +352,7 @@
             this.orderBtn.TabIndex = 25;
             this.orderBtn.Text = "Order";
             this.orderBtn.UseVisualStyleBackColor = false;
+            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
             // categoryBtn
             // 
@@ -344,6 +367,7 @@
             this.categoryBtn.TabIndex = 24;
             this.categoryBtn.Text = "Category";
             this.categoryBtn.UseVisualStyleBackColor = false;
+            this.categoryBtn.Click += new System.EventHandler(this.categoryBtn_Click);
             // 
             // customerBtn
             // 
@@ -358,6 +382,7 @@
             this.customerBtn.TabIndex = 23;
             this.customerBtn.Text = "Customer";
             this.customerBtn.UseVisualStyleBackColor = false;
+            this.customerBtn.Click += new System.EventHandler(this.customerBtn_Click);
             // 
             // adminBtn
             // 
@@ -372,6 +397,7 @@
             this.adminBtn.TabIndex = 22;
             this.adminBtn.Text = "Admin";
             this.adminBtn.UseVisualStyleBackColor = false;
+            this.adminBtn.Click += new System.EventHandler(this.adminBtn_Click);
             // 
             // logo
             // 
@@ -384,6 +410,17 @@
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
             // 
+            // exportBtn
+            // 
+            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBtn.Location = new System.Drawing.Point(810, 360);
+            this.exportBtn.Name = "exportBtn";
+            this.exportBtn.Size = new System.Drawing.Size(75, 23);
+            this.exportBtn.TabIndex = 32;
+            this.exportBtn.Text = "Export";
+            this.exportBtn.UseVisualStyleBackColor = true;
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,7 +431,9 @@
             this.Controls.Add(this.tablePanel);
             this.Controls.Add(this.navbarPanel);
             this.Name = "admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Flora - Admin";
+            this.Load += new System.EventHandler(this.admin_Load);
             this.crudPanel.ResumeLayout(false);
             this.crudPanel.PerformLayout();
             this.tablePanel.ResumeLayout(false);
@@ -419,9 +458,6 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Panel tablePanel;
         private System.Windows.Forms.DataGridView adminDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.Label adminLabel;
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox searchTextBox;
@@ -436,7 +472,10 @@
         private System.Windows.Forms.Button adminBtn;
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox securityAnsTextBox;
+        private System.Windows.Forms.Button reloadBtn;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.Button exportBtn;
     }
 }
 

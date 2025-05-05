@@ -1,6 +1,6 @@
 ﻿namespace EDP_Flora
 {
-    partial class inventory
+    partial class category
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inventory));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(category));
             this.crudPanel = new System.Windows.Forms.Panel();
             this.nameLabel = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
@@ -42,6 +42,7 @@
             this.InventoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventoryLabel = new System.Windows.Forms.Label();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.navbarPanel = new System.Windows.Forms.Panel();
@@ -54,7 +55,6 @@
             this.customerBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.inventoryLabel = new System.Windows.Forms.Label();
             this.crudPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).BeginInit();
@@ -193,6 +193,16 @@
             this.Quantity.HeaderText = "Quantity";
             this.Quantity.Name = "Quantity";
             // 
+            // inventoryLabel
+            // 
+            this.inventoryLabel.AutoSize = true;
+            this.inventoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inventoryLabel.Location = new System.Drawing.Point(20, 19);
+            this.inventoryLabel.Name = "inventoryLabel";
+            this.inventoryLabel.Size = new System.Drawing.Size(107, 25);
+            this.inventoryLabel.TabIndex = 20;
+            this.inventoryLabel.Text = "Category";
+            // 
             // searchLabel
             // 
             this.searchLabel.AutoSize = true;
@@ -254,6 +264,7 @@
             this.supplierBtn.TabIndex = 28;
             this.supplierBtn.Text = "Supplier";
             this.supplierBtn.UseVisualStyleBackColor = false;
+            this.supplierBtn.Click += new System.EventHandler(this.supplierBtn_Click);
             // 
             // saleBtn
             // 
@@ -268,6 +279,7 @@
             this.saleBtn.TabIndex = 27;
             this.saleBtn.Text = "Sales";
             this.saleBtn.UseVisualStyleBackColor = false;
+            this.saleBtn.Click += new System.EventHandler(this.saleBtn_Click);
             // 
             // productBtn
             // 
@@ -282,6 +294,7 @@
             this.productBtn.TabIndex = 26;
             this.productBtn.Text = "Product";
             this.productBtn.UseVisualStyleBackColor = false;
+            this.productBtn.Click += new System.EventHandler(this.productBtn_Click);
             // 
             // orderBtn
             // 
@@ -296,6 +309,7 @@
             this.orderBtn.TabIndex = 25;
             this.orderBtn.Text = "Order";
             this.orderBtn.UseVisualStyleBackColor = false;
+            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
             // categoryBtn
             // 
@@ -310,6 +324,7 @@
             this.categoryBtn.TabIndex = 24;
             this.categoryBtn.Text = "Category";
             this.categoryBtn.UseVisualStyleBackColor = false;
+            this.categoryBtn.Click += new System.EventHandler(this.categoryBtn_Click);
             // 
             // customerBtn
             // 
@@ -324,6 +339,7 @@
             this.customerBtn.TabIndex = 23;
             this.customerBtn.Text = "Customer";
             this.customerBtn.UseVisualStyleBackColor = false;
+            this.customerBtn.Click += new System.EventHandler(this.customerBtn_Click);
             // 
             // adminBtn
             // 
@@ -338,6 +354,7 @@
             this.adminBtn.TabIndex = 22;
             this.adminBtn.Text = "Admin";
             this.adminBtn.UseVisualStyleBackColor = false;
+            this.adminBtn.Click += new System.EventHandler(this.adminBtn_Click);
             // 
             // logo
             // 
@@ -350,17 +367,7 @@
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
             // 
-            // inventoryLabel
-            // 
-            this.inventoryLabel.AutoSize = true;
-            this.inventoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventoryLabel.Location = new System.Drawing.Point(20, 19);
-            this.inventoryLabel.Name = "inventoryLabel";
-            this.inventoryLabel.Size = new System.Drawing.Size(107, 25);
-            this.inventoryLabel.TabIndex = 20;
-            this.inventoryLabel.Text = "Category";
-            // 
-            // inventory
+            // category
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -370,7 +377,7 @@
             this.Controls.Add(this.tablePanel);
             this.Controls.Add(this.navbarPanel);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Name = "inventory";
+            this.Name = "category";
             this.Text = "Flora - Category";
             this.Load += new System.EventHandler(this.inventory_Load);
             this.crudPanel.ResumeLayout(false);
