@@ -30,15 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sale));
             this.tablePanel = new System.Windows.Forms.Panel();
-            this.inventoryDataGridView = new System.Windows.Forms.DataGridView();
-            this.SalesID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaymentMethod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaymentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inventoryLabel = new System.Windows.Forms.Label();
+            this.exportBtn = new System.Windows.Forms.Button();
+            this.reloadBtn = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.saleDataGridView = new System.Windows.Forms.DataGridView();
+            this.inventoryLabel = new System.Windows.Forms.Label();
             this.navbarPanel = new System.Windows.Forms.Panel();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.supplierBtn = new System.Windows.Forms.Button();
@@ -49,64 +47,107 @@
             this.customerBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.crudPanel = new System.Windows.Forms.Panel();
+            this.paymentDateDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.paymentMethodComboBox = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.orderIDComboBox = new System.Windows.Forms.ComboBox();
+            this.productIDLabel = new System.Windows.Forms.Label();
+            this.quantityLabel = new System.Windows.Forms.Label();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
             this.tablePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleDataGridView)).BeginInit();
             this.navbarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.crudPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tablePanel
             // 
             this.tablePanel.BackColor = System.Drawing.Color.SeaShell;
-            this.tablePanel.Controls.Add(this.inventoryDataGridView);
-            this.tablePanel.Controls.Add(this.inventoryLabel);
+            this.tablePanel.Controls.Add(this.exportBtn);
+            this.tablePanel.Controls.Add(this.reloadBtn);
+            this.tablePanel.Controls.Add(this.searchBtn);
             this.tablePanel.Controls.Add(this.searchLabel);
             this.tablePanel.Controls.Add(this.searchTextBox);
+            this.tablePanel.Controls.Add(this.saleDataGridView);
+            this.tablePanel.Controls.Add(this.inventoryLabel);
             this.tablePanel.Location = new System.Drawing.Point(250, 22);
             this.tablePanel.Name = "tablePanel";
-            this.tablePanel.Size = new System.Drawing.Size(906, 594);
+            this.tablePanel.Size = new System.Drawing.Size(906, 399);
             this.tablePanel.TabIndex = 47;
             // 
-            // inventoryDataGridView
+            // exportBtn
             // 
-            this.inventoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.inventoryDataGridView.BackgroundColor = System.Drawing.Color.Snow;
-            this.inventoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.inventoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SalesID,
-            this.OrderID,
-            this.TotalAmount,
-            this.PaymentMethod,
-            this.PaymentDate});
-            this.inventoryDataGridView.Location = new System.Drawing.Point(25, 56);
-            this.inventoryDataGridView.Name = "inventoryDataGridView";
-            this.inventoryDataGridView.Size = new System.Drawing.Size(860, 496);
-            this.inventoryDataGridView.TabIndex = 28;
+            this.exportBtn.BackColor = System.Drawing.Color.DarkSalmon;
+            this.exportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBtn.ForeColor = System.Drawing.Color.Snow;
+            this.exportBtn.Location = new System.Drawing.Point(777, 358);
+            this.exportBtn.Name = "exportBtn";
+            this.exportBtn.Size = new System.Drawing.Size(107, 27);
+            this.exportBtn.TabIndex = 36;
+            this.exportBtn.Text = "Export";
+            this.exportBtn.UseVisualStyleBackColor = false;
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
             // 
-            // SalesID
+            // reloadBtn
             // 
-            this.SalesID.HeaderText = "Sales ID";
-            this.SalesID.Name = "SalesID";
+            this.reloadBtn.BackColor = System.Drawing.Color.MistyRose;
+            this.reloadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.reloadBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reloadBtn.ForeColor = System.Drawing.Color.Maroon;
+            this.reloadBtn.Location = new System.Drawing.Point(24, 358);
+            this.reloadBtn.Name = "reloadBtn";
+            this.reloadBtn.Size = new System.Drawing.Size(107, 27);
+            this.reloadBtn.TabIndex = 35;
+            this.reloadBtn.Text = "Reload";
+            this.reloadBtn.UseVisualStyleBackColor = false;
+            this.reloadBtn.Click += new System.EventHandler(this.reloadBtn_Click);
             // 
-            // OrderID
+            // searchBtn
             // 
-            this.OrderID.HeaderText = "Order Number";
-            this.OrderID.Name = "OrderID";
+            this.searchBtn.BackColor = System.Drawing.Color.MistyRose;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.ForeColor = System.Drawing.Color.Maroon;
+            this.searchBtn.Location = new System.Drawing.Point(813, 23);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(71, 23);
+            this.searchBtn.TabIndex = 34;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // TotalAmount
+            // searchLabel
             // 
-            this.TotalAmount.HeaderText = "Total Amount";
-            this.TotalAmount.Name = "TotalAmount";
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchLabel.Location = new System.Drawing.Point(525, 26);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(50, 16);
+            this.searchLabel.TabIndex = 33;
+            this.searchLabel.Text = "Search";
             // 
-            // PaymentMethod
+            // searchTextBox
             // 
-            this.PaymentMethod.HeaderText = "Payment Method";
-            this.PaymentMethod.Name = "PaymentMethod";
+            this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextBox.Location = new System.Drawing.Point(581, 23);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(225, 22);
+            this.searchTextBox.TabIndex = 32;
             // 
-            // PaymentDate
+            // saleDataGridView
             // 
-            this.PaymentDate.HeaderText = "Payment Date";
-            this.PaymentDate.Name = "PaymentDate";
+            this.saleDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.saleDataGridView.BackgroundColor = System.Drawing.Color.Snow;
+            this.saleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.saleDataGridView.Location = new System.Drawing.Point(25, 56);
+            this.saleDataGridView.Name = "saleDataGridView";
+            this.saleDataGridView.Size = new System.Drawing.Size(860, 296);
+            this.saleDataGridView.TabIndex = 28;
             // 
             // inventoryLabel
             // 
@@ -117,24 +158,6 @@
             this.inventoryLabel.Size = new System.Drawing.Size(71, 25);
             this.inventoryLabel.TabIndex = 20;
             this.inventoryLabel.Text = "Sales";
-            // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(604, 26);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(50, 16);
-            this.searchLabel.TabIndex = 27;
-            this.searchLabel.Text = "Search";
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTextBox.Location = new System.Drawing.Point(660, 23);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(225, 22);
-            this.searchTextBox.TabIndex = 26;
             // 
             // navbarPanel
             // 
@@ -179,6 +202,7 @@
             this.supplierBtn.TabIndex = 28;
             this.supplierBtn.Text = "Supplier";
             this.supplierBtn.UseVisualStyleBackColor = false;
+            this.supplierBtn.Click += new System.EventHandler(this.supplierBtn_Click);
             // 
             // saleBtn
             // 
@@ -193,6 +217,7 @@
             this.saleBtn.TabIndex = 27;
             this.saleBtn.Text = "Sales";
             this.saleBtn.UseVisualStyleBackColor = false;
+            this.saleBtn.Click += new System.EventHandler(this.saleBtn_Click);
             // 
             // productBtn
             // 
@@ -207,6 +232,7 @@
             this.productBtn.TabIndex = 26;
             this.productBtn.Text = "Product";
             this.productBtn.UseVisualStyleBackColor = false;
+            this.productBtn.Click += new System.EventHandler(this.productBtn_Click);
             // 
             // orderBtn
             // 
@@ -221,6 +247,7 @@
             this.orderBtn.TabIndex = 25;
             this.orderBtn.Text = "Order";
             this.orderBtn.UseVisualStyleBackColor = false;
+            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
             // categoryBtn
             // 
@@ -235,6 +262,7 @@
             this.categoryBtn.TabIndex = 24;
             this.categoryBtn.Text = "Category";
             this.categoryBtn.UseVisualStyleBackColor = false;
+            this.categoryBtn.Click += new System.EventHandler(this.categoryBtn_Click);
             // 
             // customerBtn
             // 
@@ -249,6 +277,7 @@
             this.customerBtn.TabIndex = 23;
             this.customerBtn.Text = "Customer";
             this.customerBtn.UseVisualStyleBackColor = false;
+            this.customerBtn.Click += new System.EventHandler(this.customerBtn_Click);
             // 
             // adminBtn
             // 
@@ -263,6 +292,7 @@
             this.adminBtn.TabIndex = 22;
             this.adminBtn.Text = "Admin";
             this.adminBtn.UseVisualStyleBackColor = false;
+            this.adminBtn.Click += new System.EventHandler(this.adminBtn_Click);
             // 
             // logo
             // 
@@ -275,32 +305,149 @@
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
             // 
+            // crudPanel
+            // 
+            this.crudPanel.BackColor = System.Drawing.Color.SeaShell;
+            this.crudPanel.Controls.Add(this.paymentDateDatePicker);
+            this.crudPanel.Controls.Add(this.paymentMethodComboBox);
+            this.crudPanel.Controls.Add(this.label2);
+            this.crudPanel.Controls.Add(this.orderIDComboBox);
+            this.crudPanel.Controls.Add(this.productIDLabel);
+            this.crudPanel.Controls.Add(this.quantityLabel);
+            this.crudPanel.Controls.Add(this.updateBtn);
+            this.crudPanel.Controls.Add(this.addBtn);
+            this.crudPanel.Controls.Add(this.deleteBtn);
+            this.crudPanel.Location = new System.Drawing.Point(250, 446);
+            this.crudPanel.Name = "crudPanel";
+            this.crudPanel.Size = new System.Drawing.Size(906, 193);
+            this.crudPanel.TabIndex = 48;
+            // 
+            // paymentDateDatePicker
+            // 
+            this.paymentDateDatePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentDateDatePicker.Location = new System.Drawing.Point(282, 105);
+            this.paymentDateDatePicker.Name = "paymentDateDatePicker";
+            this.paymentDateDatePicker.Size = new System.Drawing.Size(225, 20);
+            this.paymentDateDatePicker.TabIndex = 36;
+            // 
+            // paymentMethodComboBox
+            // 
+            this.paymentMethodComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentMethodComboBox.FormattingEnabled = true;
+            this.paymentMethodComboBox.Location = new System.Drawing.Point(661, 61);
+            this.paymentMethodComboBox.Name = "paymentMethodComboBox";
+            this.paymentMethodComboBox.Size = new System.Drawing.Size(224, 24);
+            this.paymentMethodComboBox.TabIndex = 35;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(547, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 16);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Payment Method";
+            // 
+            // orderIDComboBox
+            // 
+            this.orderIDComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderIDComboBox.FormattingEnabled = true;
+            this.orderIDComboBox.Location = new System.Drawing.Point(282, 58);
+            this.orderIDComboBox.Name = "orderIDComboBox";
+            this.orderIDComboBox.Size = new System.Drawing.Size(224, 24);
+            this.orderIDComboBox.TabIndex = 31;
+            // 
+            // productIDLabel
+            // 
+            this.productIDLabel.AutoSize = true;
+            this.productIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productIDLabel.Location = new System.Drawing.Point(206, 64);
+            this.productIDLabel.Name = "productIDLabel";
+            this.productIDLabel.Size = new System.Drawing.Size(57, 16);
+            this.productIDLabel.TabIndex = 30;
+            this.productIDLabel.Text = "Order ID";
+            // 
+            // quantityLabel
+            // 
+            this.quantityLabel.AutoSize = true;
+            this.quantityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantityLabel.Location = new System.Drawing.Point(184, 109);
+            this.quantityLabel.Name = "quantityLabel";
+            this.quantityLabel.Size = new System.Drawing.Size(92, 16);
+            this.quantityLabel.TabIndex = 28;
+            this.quantityLabel.Text = "Payment Date";
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBtn.ForeColor = System.Drawing.Color.SeaShell;
+            this.updateBtn.Location = new System.Drawing.Point(25, 84);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(107, 27);
+            this.updateBtn.TabIndex = 23;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
+            // 
+            // addBtn
+            // 
+            this.addBtn.BackColor = System.Drawing.Color.ForestGreen;
+            this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.ForeColor = System.Drawing.Color.SeaShell;
+            this.addBtn.Location = new System.Drawing.Point(25, 32);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(107, 27);
+            this.addBtn.TabIndex = 22;
+            this.addBtn.Text = "Add";
+            this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.BackColor = System.Drawing.Color.Crimson;
+            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.ForeColor = System.Drawing.Color.SeaShell;
+            this.deleteBtn.Location = new System.Drawing.Point(25, 135);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(107, 27);
+            this.deleteBtn.TabIndex = 24;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
             // sale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.crudPanel);
             this.Controls.Add(this.tablePanel);
             this.Controls.Add(this.navbarPanel);
             this.Name = "sale";
             this.Text = "Flora - Sales";
+            this.Load += new System.EventHandler(this.sale_Load);
             this.tablePanel.ResumeLayout(false);
             this.tablePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saleDataGridView)).EndInit();
             this.navbarPanel.ResumeLayout(false);
             this.navbarPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            this.crudPanel.ResumeLayout(false);
+            this.crudPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel tablePanel;
-        private System.Windows.Forms.DataGridView inventoryDataGridView;
+        private System.Windows.Forms.DataGridView saleDataGridView;
         private System.Windows.Forms.Label inventoryLabel;
-        private System.Windows.Forms.Label searchLabel;
-        private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Panel navbarPanel;
         private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.Button supplierBtn;
@@ -311,10 +458,20 @@
         private System.Windows.Forms.Button customerBtn;
         private System.Windows.Forms.Button adminBtn;
         private System.Windows.Forms.PictureBox logo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SalesID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentMethod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentDate;
+        private System.Windows.Forms.Panel crudPanel;
+        private System.Windows.Forms.ComboBox orderIDComboBox;
+        private System.Windows.Forms.Label productIDLabel;
+        private System.Windows.Forms.Label quantityLabel;
+        private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.DateTimePicker paymentDateDatePicker;
+        private System.Windows.Forms.ComboBox paymentMethodComboBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.Label searchLabel;
+        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.Button exportBtn;
+        private System.Windows.Forms.Button reloadBtn;
     }
 }

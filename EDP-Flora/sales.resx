@@ -117,26 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="SalesID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="OrderID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="TotalAmount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PaymentMethod.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PaymentDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="logo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAACqdJREFUeF7tnAvQVVUVx1EQREBM7QsNfIYggkGRSCVopAaIvBGVFM1EBTUzXyO+
+        vAAADrwBlbxySQAACqdJREFUeF7tnAvQVVUVx1EQREBM7QsNfIYggkGRSCVopAaIvBGVFM1EBTUzXyO+
         0clHimIz+Gga05pIKQ3UAIusxjSn0lAbI6cmLSchG0AGQ1J//z3rnNl3f/s+zrmP73pxzfxn773W3mut
         ve557Ne5nT6kJqLZe7SNABOGdu+xm7FSgj/5yQFDHgQvg6WUjzZRa9PCfvvfQoffM7xF+UIC1N1k13qy
         BO/AP9w1blUiAF3V0aDjwlo6fxnptoCf4L+03d3UtB5xWxwU6XRFIHCXmprWIzp3daTDjxGwT5BfHMoC

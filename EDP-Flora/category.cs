@@ -172,7 +172,7 @@ namespace EDP_Flora
 
         private void exportBtn_Click(object sender, EventArgs e)
         {
-            string fileName = Interaction.InputBox("Enter a name for the CSV file (without extension):", "Name your file", "Export");
+            string fileName = Interaction.InputBox("Enter a name for the CSV file (without extension):", "Name your file", "category");
 
             if (string.IsNullOrWhiteSpace(fileName))
             {

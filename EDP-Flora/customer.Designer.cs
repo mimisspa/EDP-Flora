@@ -338,6 +338,7 @@
             this.supplierBtn.TabIndex = 28;
             this.supplierBtn.Text = "Supplier";
             this.supplierBtn.UseVisualStyleBackColor = false;
+            this.supplierBtn.Click += new System.EventHandler(this.supplierBtn_Click);
             // 
             // saleBtn
             // 
@@ -352,6 +353,7 @@
             this.saleBtn.TabIndex = 27;
             this.saleBtn.Text = "Sales";
             this.saleBtn.UseVisualStyleBackColor = false;
+            this.saleBtn.Click += new System.EventHandler(this.saleBtn_Click);
             // 
             // productBtn
             // 
@@ -366,6 +368,7 @@
             this.productBtn.TabIndex = 26;
             this.productBtn.Text = "Product";
             this.productBtn.UseVisualStyleBackColor = false;
+            this.productBtn.Click += new System.EventHandler(this.productBtn_Click);
             // 
             // orderBtn
             // 
@@ -380,6 +383,7 @@
             this.orderBtn.TabIndex = 25;
             this.orderBtn.Text = "Order";
             this.orderBtn.UseVisualStyleBackColor = false;
+            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
             // categoryBtn
             // 
@@ -394,6 +398,7 @@
             this.categoryBtn.TabIndex = 24;
             this.categoryBtn.Text = "Category";
             this.categoryBtn.UseVisualStyleBackColor = false;
+            this.categoryBtn.Click += new System.EventHandler(this.categoryBtn_Click);
             // 
             // customerBtn
             // 
@@ -408,6 +413,7 @@
             this.customerBtn.TabIndex = 23;
             this.customerBtn.Text = "Customer";
             this.customerBtn.UseVisualStyleBackColor = false;
+            this.customerBtn.Click += new System.EventHandler(this.customerBtn_Click);
             // 
             // adminBtn
             // 
@@ -422,6 +428,7 @@
             this.adminBtn.TabIndex = 22;
             this.adminBtn.Text = "Admin";
             this.adminBtn.UseVisualStyleBackColor = false;
+            this.adminBtn.Click += new System.EventHandler(this.adminBtn_Click);
             // 
             // logo
             // 
@@ -444,7 +451,7 @@
             this.Controls.Add(this.tablePanel);
             this.Controls.Add(this.navbarPanel);
             this.Name = "customer";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Flora - Customer";
             this.Load += new System.EventHandler(this.customer_Load);
             this.crudPanel.ResumeLayout(false);

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(product));
             this.crudPanel = new System.Windows.Forms.Panel();
+            this.categoryIDComboBox = new System.Windows.Forms.ComboBox();
             this.categoryIDLabel = new System.Windows.Forms.Label();
             this.productNameLabel = new System.Windows.Forms.Label();
             this.priceTextBox = new System.Windows.Forms.TextBox();
@@ -41,15 +42,13 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.stockTextBox = new System.Windows.Forms.TextBox();
             this.tablePanel = new System.Windows.Forms.Panel();
-            this.inventoryDataGridView = new System.Windows.Forms.DataGridView();
-            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productLabel = new System.Windows.Forms.Label();
+            this.exportBtn = new System.Windows.Forms.Button();
+            this.reloadBtn = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.productDataGridView = new System.Windows.Forms.DataGridView();
+            this.productLabel = new System.Windows.Forms.Label();
             this.navbarPanel = new System.Windows.Forms.Panel();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.supplierBtn = new System.Windows.Forms.Button();
@@ -60,10 +59,9 @@
             this.customerBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.categoryIDComboBox = new System.Windows.Forms.ComboBox();
             this.crudPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             this.navbarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +84,15 @@
             this.crudPanel.Name = "crudPanel";
             this.crudPanel.Size = new System.Drawing.Size(906, 193);
             this.crudPanel.TabIndex = 45;
+            // 
+            // categoryIDComboBox
+            // 
+            this.categoryIDComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryIDComboBox.FormattingEnabled = true;
+            this.categoryIDComboBox.Location = new System.Drawing.Point(659, 104);
+            this.categoryIDComboBox.Name = "categoryIDComboBox";
+            this.categoryIDComboBox.Size = new System.Drawing.Size(225, 24);
+            this.categoryIDComboBox.TabIndex = 35;
             // 
             // categoryIDLabel
             // 
@@ -157,6 +164,7 @@
             this.updateBtn.TabIndex = 23;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // addBtn
             // 
@@ -170,6 +178,7 @@
             this.addBtn.TabIndex = 22;
             this.addBtn.Text = "Add";
             this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // deleteBtn
             // 
@@ -183,6 +192,7 @@
             this.deleteBtn.TabIndex = 24;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click_1);
             // 
             // stockTextBox
             // 
@@ -195,55 +205,87 @@
             // tablePanel
             // 
             this.tablePanel.BackColor = System.Drawing.Color.SeaShell;
-            this.tablePanel.Controls.Add(this.inventoryDataGridView);
-            this.tablePanel.Controls.Add(this.productLabel);
+            this.tablePanel.Controls.Add(this.exportBtn);
+            this.tablePanel.Controls.Add(this.reloadBtn);
+            this.tablePanel.Controls.Add(this.searchBtn);
             this.tablePanel.Controls.Add(this.searchLabel);
             this.tablePanel.Controls.Add(this.searchTextBox);
+            this.tablePanel.Controls.Add(this.productDataGridView);
+            this.tablePanel.Controls.Add(this.productLabel);
             this.tablePanel.Location = new System.Drawing.Point(250, 22);
             this.tablePanel.Name = "tablePanel";
             this.tablePanel.Size = new System.Drawing.Size(906, 398);
             this.tablePanel.TabIndex = 44;
             // 
-            // inventoryDataGridView
+            // exportBtn
             // 
-            this.inventoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.inventoryDataGridView.BackgroundColor = System.Drawing.Color.Snow;
-            this.inventoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.inventoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProductID,
-            this.ProductName,
-            this.Price,
-            this.Stock,
-            this.SupplierName});
-            this.inventoryDataGridView.Location = new System.Drawing.Point(25, 56);
-            this.inventoryDataGridView.Name = "inventoryDataGridView";
-            this.inventoryDataGridView.Size = new System.Drawing.Size(860, 316);
-            this.inventoryDataGridView.TabIndex = 28;
+            this.exportBtn.BackColor = System.Drawing.Color.DarkSalmon;
+            this.exportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBtn.ForeColor = System.Drawing.Color.Snow;
+            this.exportBtn.Location = new System.Drawing.Point(778, 358);
+            this.exportBtn.Name = "exportBtn";
+            this.exportBtn.Size = new System.Drawing.Size(107, 27);
+            this.exportBtn.TabIndex = 36;
+            this.exportBtn.Text = "Export";
+            this.exportBtn.UseVisualStyleBackColor = false;
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
             // 
-            // ProductID
+            // reloadBtn
             // 
-            this.ProductID.HeaderText = "ProductID";
-            this.ProductID.Name = "ProductID";
+            this.reloadBtn.BackColor = System.Drawing.Color.MistyRose;
+            this.reloadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.reloadBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reloadBtn.ForeColor = System.Drawing.Color.Maroon;
+            this.reloadBtn.Location = new System.Drawing.Point(25, 358);
+            this.reloadBtn.Name = "reloadBtn";
+            this.reloadBtn.Size = new System.Drawing.Size(107, 27);
+            this.reloadBtn.TabIndex = 35;
+            this.reloadBtn.Text = "Reload";
+            this.reloadBtn.UseVisualStyleBackColor = false;
+            this.reloadBtn.Click += new System.EventHandler(this.reloadBtn_Click);
             // 
-            // ProductName
+            // searchBtn
             // 
-            this.ProductName.HeaderText = "Product Name";
-            this.ProductName.Name = "ProductName";
+            this.searchBtn.BackColor = System.Drawing.Color.MistyRose;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.ForeColor = System.Drawing.Color.Maroon;
+            this.searchBtn.Location = new System.Drawing.Point(814, 23);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(71, 23);
+            this.searchBtn.TabIndex = 34;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // Price
+            // searchLabel
             // 
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchLabel.Location = new System.Drawing.Point(522, 26);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(50, 16);
+            this.searchLabel.TabIndex = 33;
+            this.searchLabel.Text = "Search";
             // 
-            // Stock
+            // searchTextBox
             // 
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
+            this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextBox.Location = new System.Drawing.Point(578, 23);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(225, 22);
+            this.searchTextBox.TabIndex = 32;
             // 
-            // SupplierName
+            // productDataGridView
             // 
-            this.SupplierName.HeaderText = "Supplier Name";
-            this.SupplierName.Name = "SupplierName";
+            this.productDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.productDataGridView.BackgroundColor = System.Drawing.Color.Snow;
+            this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productDataGridView.Location = new System.Drawing.Point(25, 56);
+            this.productDataGridView.Name = "productDataGridView";
+            this.productDataGridView.Size = new System.Drawing.Size(860, 296);
+            this.productDataGridView.TabIndex = 28;
             // 
             // productLabel
             // 
@@ -254,24 +296,6 @@
             this.productLabel.Size = new System.Drawing.Size(93, 25);
             this.productLabel.TabIndex = 20;
             this.productLabel.Text = "Product";
-            // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(604, 26);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(50, 16);
-            this.searchLabel.TabIndex = 27;
-            this.searchLabel.Text = "Search";
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTextBox.Location = new System.Drawing.Point(660, 23);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(225, 22);
-            this.searchTextBox.TabIndex = 26;
             // 
             // navbarPanel
             // 
@@ -316,6 +340,7 @@
             this.supplierBtn.TabIndex = 28;
             this.supplierBtn.Text = "Supplier";
             this.supplierBtn.UseVisualStyleBackColor = false;
+            this.supplierBtn.Click += new System.EventHandler(this.supplierBtn_Click);
             // 
             // saleBtn
             // 
@@ -330,6 +355,7 @@
             this.saleBtn.TabIndex = 27;
             this.saleBtn.Text = "Sales";
             this.saleBtn.UseVisualStyleBackColor = false;
+            this.saleBtn.Click += new System.EventHandler(this.saleBtn_Click);
             // 
             // productBtn
             // 
@@ -344,6 +370,7 @@
             this.productBtn.TabIndex = 26;
             this.productBtn.Text = "Product";
             this.productBtn.UseVisualStyleBackColor = false;
+            this.productBtn.Click += new System.EventHandler(this.productBtn_Click);
             // 
             // orderBtn
             // 
@@ -358,6 +385,7 @@
             this.orderBtn.TabIndex = 25;
             this.orderBtn.Text = "Order";
             this.orderBtn.UseVisualStyleBackColor = false;
+            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
             // categoryBtn
             // 
@@ -372,6 +400,7 @@
             this.categoryBtn.TabIndex = 24;
             this.categoryBtn.Text = "Category";
             this.categoryBtn.UseVisualStyleBackColor = false;
+            this.categoryBtn.Click += new System.EventHandler(this.categoryBtn_Click);
             // 
             // customerBtn
             // 
@@ -386,6 +415,7 @@
             this.customerBtn.TabIndex = 23;
             this.customerBtn.Text = "Customer";
             this.customerBtn.UseVisualStyleBackColor = false;
+            this.customerBtn.Click += new System.EventHandler(this.customerBtn_Click);
             // 
             // adminBtn
             // 
@@ -400,6 +430,7 @@
             this.adminBtn.TabIndex = 22;
             this.adminBtn.Text = "Admin";
             this.adminBtn.UseVisualStyleBackColor = false;
+            this.adminBtn.Click += new System.EventHandler(this.adminBtn_Click);
             // 
             // logo
             // 
@@ -412,15 +443,6 @@
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
             // 
-            // categoryIDComboBox
-            // 
-            this.categoryIDComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoryIDComboBox.FormattingEnabled = true;
-            this.categoryIDComboBox.Location = new System.Drawing.Point(659, 104);
-            this.categoryIDComboBox.Name = "categoryIDComboBox";
-            this.categoryIDComboBox.Size = new System.Drawing.Size(225, 24);
-            this.categoryIDComboBox.TabIndex = 35;
-            // 
             // product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,11 +454,12 @@
             this.Controls.Add(this.navbarPanel);
             this.Name = "product";
             this.Text = "Flora - Product";
+            this.Load += new System.EventHandler(this.product_Load);
             this.crudPanel.ResumeLayout(false);
             this.crudPanel.PerformLayout();
             this.tablePanel.ResumeLayout(false);
             this.tablePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
             this.navbarPanel.ResumeLayout(false);
             this.navbarPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
@@ -458,10 +481,8 @@
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.TextBox stockTextBox;
         private System.Windows.Forms.Panel tablePanel;
-        private System.Windows.Forms.DataGridView inventoryDataGridView;
+        private System.Windows.Forms.DataGridView productDataGridView;
         private System.Windows.Forms.Label productLabel;
-        private System.Windows.Forms.Label searchLabel;
-        private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Panel navbarPanel;
         private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.Button supplierBtn;
@@ -472,11 +493,11 @@
         private System.Windows.Forms.Button customerBtn;
         private System.Windows.Forms.Button adminBtn;
         private System.Windows.Forms.PictureBox logo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
         private System.Windows.Forms.ComboBox categoryIDComboBox;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.Label searchLabel;
+        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.Button exportBtn;
+        private System.Windows.Forms.Button reloadBtn;
     }
 }

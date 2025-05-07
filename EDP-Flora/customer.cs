@@ -151,7 +151,7 @@ namespace EDP_Flora
 
         private void exportBtn_Click(object sender, EventArgs e)
         {
-            string fileName = Interaction.InputBox("Enter a name for the CSV file (without extension):", "Name your file", "Export");
+            string fileName = Interaction.InputBox("Enter a name for the CSV file (without extension):", "Name your file", "customer");
 
             if (string.IsNullOrWhiteSpace(fileName))
             {
@@ -204,6 +204,54 @@ namespace EDP_Flora
             {
                 MessageBox.Show("Export failed:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void OpenForm(Form form)
+        {
+            this.Hide();
+            form.FormClosed += (s, args) => this.Close();
+            form.Show();
+        }
+
+        private void adminBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OpenForm(new admin());
+        }
+
+        private void customerBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OpenForm(new customer());
+        }
+
+        private void categoryBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OpenForm(new category());
+        }
+
+        private void orderBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OpenForm(new order());
+        }
+
+        private void productBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OpenForm(new product());
+        }
+
+        private void saleBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OpenForm(new sale());
+        }
+
+        private void supplierBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OpenForm(new supplier());
         }
     }
 }
