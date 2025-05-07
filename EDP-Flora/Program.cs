@@ -16,7 +16,7 @@ namespace EDP_Flora
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new sale());
+            Application.Run(new supplier());
         }
     }
 }
