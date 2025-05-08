@@ -172,7 +172,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.loginPanel);
             this.Name = "forgotPassResetPass";
-            this.Text = "Flora - Rest Password";
+            this.Text = "Flora - Reset Password";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.loginPanel.ResumeLayout(false);
             this.loginPanel.PerformLayout();
