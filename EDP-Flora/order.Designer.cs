@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(order));
             this.tablePanel = new System.Windows.Forms.Panel();
+            this.columnFilterComboBox = new System.Windows.Forms.ComboBox();
             this.exportBtn = new System.Windows.Forms.Button();
             this.reloadBtn = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
@@ -57,7 +58,6 @@
             this.addBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
-            this.columnFilterComboBox = new System.Windows.Forms.ComboBox();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).BeginInit();
             this.navbarPanel.SuspendLayout();
@@ -80,6 +80,15 @@
             this.tablePanel.Name = "tablePanel";
             this.tablePanel.Size = new System.Drawing.Size(906, 399);
             this.tablePanel.TabIndex = 41;
+            // 
+            // columnFilterComboBox
+            // 
+            this.columnFilterComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.columnFilterComboBox.FormattingEnabled = true;
+            this.columnFilterComboBox.Location = new System.Drawing.Point(653, 23);
+            this.columnFilterComboBox.Name = "columnFilterComboBox";
+            this.columnFilterComboBox.Size = new System.Drawing.Size(155, 24);
+            this.columnFilterComboBox.TabIndex = 43;
             // 
             // exportBtn
             // 
@@ -192,6 +201,7 @@
             this.logoutBtn.TabIndex = 29;
             this.logoutBtn.Text = "Log Out";
             this.logoutBtn.UseVisualStyleBackColor = false;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // supplierBtn
             // 
@@ -422,15 +432,6 @@
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(225, 22);
             this.quantityTextBox.TabIndex = 26;
-            // 
-            // columnFilterComboBox
-            // 
-            this.columnFilterComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.columnFilterComboBox.FormattingEnabled = true;
-            this.columnFilterComboBox.Location = new System.Drawing.Point(653, 23);
-            this.columnFilterComboBox.Name = "columnFilterComboBox";
-            this.columnFilterComboBox.Size = new System.Drawing.Size(155, 24);
-            this.columnFilterComboBox.TabIndex = 43;
             // 
             // order
             // 
