@@ -89,7 +89,10 @@ namespace EDP_Flora
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            login loginForm = new login();
+            loginForm.Show();
+            loginForm.FormClosed += (s, args) => this.Close();
         }
 
         private void OpenForm(Form form)
