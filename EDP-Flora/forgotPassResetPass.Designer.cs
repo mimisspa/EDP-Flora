@@ -70,6 +70,7 @@
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(483, 563);
             this.loginPanel.TabIndex = 4;
+            this.loginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loginPanel_Paint);
             // 
             // confirmPasswordTextBox
             // 
@@ -139,8 +140,9 @@
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Size = new System.Drawing.Size(113, 38);
             this.resetBtn.TabIndex = 6;
-            this.resetBtn.Text = "Verify";
+            this.resetBtn.Text = "Confirm";
             this.resetBtn.UseVisualStyleBackColor = false;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
             // pictureBox2
             // 
