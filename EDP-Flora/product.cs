@@ -139,6 +139,7 @@ namespace EDP_Flora
                 categoryIDComboBox.DisplayMember = "categoryID";
                 categoryIDComboBox.ValueMember = "categoryID";
             }
+            categoryIDComboBox.SelectedIndex = -1;
         }
 
         private void reloadBtn_Click(object sender, EventArgs e)

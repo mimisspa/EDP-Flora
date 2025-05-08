@@ -89,6 +89,7 @@ namespace EDP_Flora
                 orderIDComboBox.DisplayMember = "orderID";
                 orderIDComboBox.ValueMember = "orderID";
             }
+            orderIDComboBox.SelectedIndex = -1;
         }
 
         private void LoadPaymentMethods()
@@ -110,6 +111,7 @@ namespace EDP_Flora
                 paymentMethodComboBox.DisplayMember = "paymentMethod";
                 paymentMethodComboBox.ValueMember = "paymentMethod"; 
             }
+            paymentMethodComboBox.SelectedIndex = -1;
         }
 
         private void updateBtn_Click(object sender, EventArgs e)

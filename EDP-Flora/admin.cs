@@ -104,21 +104,35 @@ namespace EDP_Flora
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            string conString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
-
-            using (MySqlConnection con = new MySqlConnection(conString))
+            if (string.IsNullOrWhiteSpace(usernameTextBox.Text) ||
+                string.IsNullOrWhiteSpace(passwordTextBox.Text) ||
+                string.IsNullOrWhiteSpace(securityAnsTextBox.Text))
             {
-                con.Open();
+                MessageBox.Show("Please fill in all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                string query = "INSERT INTO admin (username, password, security_answer) VALUES (@username, @password, @security_answer)";
-                MySqlCommand cmd = new MySqlCommand(query, con);
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(conString))
+                {
+                    con.Open();
 
-                cmd.Parameters.AddWithValue("@username", usernameTextBox.Text);
-                cmd.Parameters.AddWithValue("@password", passwordTextBox.Text); 
-                cmd.Parameters.AddWithValue("@security_answer", securityAnsTextBox.Text);
+                    string query = "INSERT INTO admin (username, password, security_answer) VALUES (@username, @password, @security_answer)";
+                    MySqlCommand cmd = new MySqlCommand(query, con);
 
-                int i = cmd.ExecuteNonQuery();
-                MessageBox.Show(i + " record(s) inserted");
+                    cmd.Parameters.AddWithValue("@username", usernameTextBox.Text.Trim());
+                    cmd.Parameters.AddWithValue("@password", passwordTextBox.Text.Trim());
+                    cmd.Parameters.AddWithValue("@security_answer", securityAnsTextBox.Text.Trim());
+
+                    int i = cmd.ExecuteNonQuery();
+                    MessageBox.Show(i + " record(s) inserted.");
+                    LoadAdminTable();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while inserting the record:\n" + ex.Message, "Insert Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -165,82 +179,118 @@ namespace EDP_Flora
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            if (adminDataGridView.CurrentRow != null)
+            if (adminDataGridView.CurrentRow == null)
+            {
+                MessageBox.Show("No row selected. Please select a row to update.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(usernameTextBox.Text) ||
+                string.IsNullOrWhiteSpace(passwordTextBox.Text) ||
+                string.IsNullOrWhiteSpace(securityAnsTextBox.Text))
+            {
+                MessageBox.Show("Please fill in all fields before updating.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
             {
                 using (MySqlConnection con = new MySqlConnection(conString))
                 {
                     con.Open();
-
                     string query = "UPDATE admin SET username = @username, password = @password, security_answer = @security_answer WHERE admin_id = @admin_id";
                     MySqlCommand cmd = new MySqlCommand(query, con);
 
-                    cmd.Parameters.AddWithValue("@username", usernameTextBox.Text);
-                    cmd.Parameters.AddWithValue("@password", passwordTextBox.Text); 
-                    cmd.Parameters.AddWithValue("@security_answer", securityAnsTextBox.Text);
+                    cmd.Parameters.AddWithValue("@username", usernameTextBox.Text.Trim());
+                    cmd.Parameters.AddWithValue("@password", passwordTextBox.Text.Trim());
+                    cmd.Parameters.AddWithValue("@security_answer", securityAnsTextBox.Text.Trim());
                     cmd.Parameters.AddWithValue("@admin_id", adminDataGridView.CurrentRow.Cells["admin_id"].Value);
 
                     int result = cmd.ExecuteNonQuery();
-                    MessageBox.Show(result + " record(s) updated");
+                    MessageBox.Show(result + " record(s) updated.");
+                    LoadAdminTable();
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No row selected. Please select a row to update.");
+                MessageBox.Show("An error occurred while updating the record:\n" + ex.Message, "Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            string conString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
-
-            using (MySqlConnection con = new MySqlConnection(conString))
+            if (adminDataGridView.CurrentRow == null)
             {
-                con.Open();
+                MessageBox.Show("Please select a row to delete.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                string query = "DELETE FROM admin WHERE admin_id = @admin_id";
-                MySqlCommand cmd = new MySqlCommand(query, con);
+            var confirm = MessageBox.Show("Are you sure you want to delete the selected record?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm != DialogResult.Yes) return;
 
-                cmd.Parameters.AddWithValue("@admin_id", adminDataGridView.CurrentRow.Cells[0].Value);
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(conString))
+                {
+                    con.Open();
+                    string query = "DELETE FROM admin WHERE admin_id = @admin_id";
+                    MySqlCommand cmd = new MySqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@admin_id", adminDataGridView.CurrentRow.Cells[0].Value);
 
-                int i = cmd.ExecuteNonQuery();
-                MessageBox.Show(i + " record(s) deleted");
+                    int i = cmd.ExecuteNonQuery();
+                    MessageBox.Show(i + " record(s) deleted.");
+                    LoadAdminTable();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while deleting the record:\n" + ex.Message, "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            string conString = ConfigurationManager
-                .ConnectionStrings["MySqlConnection"]
-                .ConnectionString;
             string userInput = searchTextBox.Text.Trim();
-
-            string selectedColumn = columnFilterComboBox.SelectedItem as string;
-            bool hasValidSelection =
-                !string.IsNullOrEmpty(selectedColumn)
-                && columnFilterComboBox.Items.Contains(selectedColumn);
-
-            string query;
-            if (hasValidSelection)
+            if (string.IsNullOrWhiteSpace(userInput))
             {
-                query = $"SELECT * FROM admin WHERE `{selectedColumn}` LIKE @search";
-            }
-            else
-            {
-                var cols = columnFilterComboBox.Items
-                            .Cast<string>()
-                            .Select(col => $"`{col}` LIKE @search");
-                query = "SELECT * FROM admin WHERE " + string.Join(" OR ", cols);
+                MessageBox.Show("Please enter a search keyword.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
-            using (var con = new MySqlConnection(conString))
-            using (var cmd = new MySqlCommand(query, con))
+            try
             {
-                cmd.Parameters.AddWithValue("@search", "%" + userInput + "%");
+                string selectedColumn = columnFilterComboBox.SelectedItem as string;
+                bool hasValidSelection =
+                    !string.IsNullOrEmpty(selectedColumn)
+                    && columnFilterComboBox.Items.Contains(selectedColumn);
 
-                var adapter = new MySqlDataAdapter(cmd);
-                var table = new DataTable();
-                adapter.Fill(table);
-                adminDataGridView.DataSource = table;
+                string query;
+                if (hasValidSelection)
+                {
+                    query = $"SELECT * FROM admin WHERE `{selectedColumn}` LIKE @search";
+                }
+                else
+                {
+                    var cols = columnFilterComboBox.Items
+                                .Cast<string>()
+                                .Select(col => $"`{col}` LIKE @search");
+                    query = "SELECT * FROM admin WHERE " + string.Join(" OR ", cols);
+                }
+
+                using (var con = new MySqlConnection(conString))
+                using (var cmd = new MySqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@search", "%" + userInput + "%");
+
+                    var adapter = new MySqlDataAdapter(cmd);
+                    var table = new DataTable();
+                    adapter.Fill(table);
+                    adminDataGridView.DataSource = table;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred during the search:\n" + ex.Message, "Search Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

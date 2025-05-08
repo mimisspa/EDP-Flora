@@ -105,6 +105,7 @@ namespace EDP_Flora
                 productComboBox.DisplayMember = "productID";
                 productComboBox.ValueMember = "productID";
             }
+            productComboBox.SelectedIndex = -1;
         }
 
         private void updateBtn_Click(object sender, EventArgs e)
