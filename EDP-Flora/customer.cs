@@ -26,6 +26,7 @@ namespace EDP_Flora
         {
             LoadCustomerTable();
             customerDataGridView.CellClick += customerDataGridView_CellContentClick;
+            LoadCustomerColumns();
 
         }
 
@@ -131,21 +132,61 @@ namespace EDP_Flora
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            string conString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            string conString = ConfigurationManager
+                .ConnectionStrings["MySqlConnection"]
+                .ConnectionString;
+            string userInput = searchTextBox.Text.Trim();
 
-            using (MySqlConnection con = new MySqlConnection(conString))
+            string selectedColumn = columnFilterComboBox.SelectedItem as string;
+            bool hasValidSelection =
+                !string.IsNullOrEmpty(selectedColumn)
+                && columnFilterComboBox.Items.Contains(selectedColumn);
+
+            string query;
+            if (hasValidSelection)
+            {
+                query = $"SELECT * FROM customers WHERE `{selectedColumn}` LIKE @search";
+            }
+            else
+            {
+                var cols = columnFilterComboBox.Items
+                            .Cast<string>()
+                            .Select(col => $"`{col}` LIKE @search");
+                query = "SELECT * FROM customers WHERE " + string.Join(" OR ", cols);
+            }
+
+            using (var con = new MySqlConnection(conString))
+            using (var cmd = new MySqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@search", "%" + userInput + "%");
+
+                var adapter = new MySqlDataAdapter(cmd);
+                var table = new DataTable();
+                adapter.Fill(table);
+                customerDataGridView.DataSource = table;
+            }
+        }
+
+        private void LoadCustomerColumns()
+        {
+            columnFilterComboBox.Items.Clear();
+
+            string conString = ConfigurationManager
+                .ConnectionStrings["MySqlConnection"]
+                .ConnectionString;
+
+            using (var con = new MySqlConnection(conString))
+            using (var cmd = new MySqlCommand("SHOW COLUMNS FROM customers", con))
             {
                 con.Open();
-
-                string query = "SELECT * FROM customers WHERE name LIKE @name";
-                MySqlCommand cmd = new MySqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@name", "%" + searchTextBox.Text + "%");
-
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-
-                customerDataGridView.DataSource = table;
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string colName = reader.GetString(0);
+                        columnFilterComboBox.Items.Add(colName);
+                    }
+                }
             }
         }
 

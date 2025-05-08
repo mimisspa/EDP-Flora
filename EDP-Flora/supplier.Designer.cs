@@ -40,6 +40,11 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.phoneTextBox = new System.Windows.Forms.TextBox();
             this.tablePanel = new System.Windows.Forms.Panel();
+            this.exportBtn = new System.Windows.Forms.Button();
+            this.reloadBtn = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.searchLabel = new System.Windows.Forms.Label();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
             this.supplierDataGridView = new System.Windows.Forms.DataGridView();
             this.inventoryLabel = new System.Windows.Forms.Label();
             this.navbarPanel = new System.Windows.Forms.Panel();
@@ -52,11 +57,7 @@
             this.customerBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.searchBtn = new System.Windows.Forms.Button();
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.exportBtn = new System.Windows.Forms.Button();
-            this.reloadBtn = new System.Windows.Forms.Button();
+            this.columnFilterComboBox = new System.Windows.Forms.ComboBox();
             this.crudPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.supplierDataGridView)).BeginInit();
@@ -180,6 +181,7 @@
             // tablePanel
             // 
             this.tablePanel.BackColor = System.Drawing.Color.SeaShell;
+            this.tablePanel.Controls.Add(this.columnFilterComboBox);
             this.tablePanel.Controls.Add(this.exportBtn);
             this.tablePanel.Controls.Add(this.reloadBtn);
             this.tablePanel.Controls.Add(this.searchBtn);
@@ -191,6 +193,66 @@
             this.tablePanel.Name = "tablePanel";
             this.tablePanel.Size = new System.Drawing.Size(906, 398);
             this.tablePanel.TabIndex = 53;
+            // 
+            // exportBtn
+            // 
+            this.exportBtn.BackColor = System.Drawing.Color.DarkSalmon;
+            this.exportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportBtn.ForeColor = System.Drawing.Color.Snow;
+            this.exportBtn.Location = new System.Drawing.Point(778, 357);
+            this.exportBtn.Name = "exportBtn";
+            this.exportBtn.Size = new System.Drawing.Size(107, 27);
+            this.exportBtn.TabIndex = 39;
+            this.exportBtn.Text = "Export";
+            this.exportBtn.UseVisualStyleBackColor = false;
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
+            // 
+            // reloadBtn
+            // 
+            this.reloadBtn.BackColor = System.Drawing.Color.MistyRose;
+            this.reloadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.reloadBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reloadBtn.ForeColor = System.Drawing.Color.Maroon;
+            this.reloadBtn.Location = new System.Drawing.Point(25, 357);
+            this.reloadBtn.Name = "reloadBtn";
+            this.reloadBtn.Size = new System.Drawing.Size(107, 27);
+            this.reloadBtn.TabIndex = 38;
+            this.reloadBtn.Text = "Reload";
+            this.reloadBtn.UseVisualStyleBackColor = false;
+            this.reloadBtn.Click += new System.EventHandler(this.reloadBtn_Click);
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.BackColor = System.Drawing.Color.MistyRose;
+            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.ForeColor = System.Drawing.Color.Maroon;
+            this.searchBtn.Location = new System.Drawing.Point(813, 23);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(71, 23);
+            this.searchBtn.TabIndex = 37;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // searchLabel
+            // 
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchLabel.Location = new System.Drawing.Point(361, 27);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(50, 16);
+            this.searchLabel.TabIndex = 36;
+            this.searchLabel.Text = "Search";
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextBox.Location = new System.Drawing.Point(417, 24);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(225, 22);
+            this.searchTextBox.TabIndex = 35;
             // 
             // supplierDataGridView
             // 
@@ -358,65 +420,14 @@
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
             // 
-            // searchBtn
+            // columnFilterComboBox
             // 
-            this.searchBtn.BackColor = System.Drawing.Color.MistyRose;
-            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBtn.ForeColor = System.Drawing.Color.Maroon;
-            this.searchBtn.Location = new System.Drawing.Point(813, 23);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(71, 23);
-            this.searchBtn.TabIndex = 37;
-            this.searchBtn.Text = "Search";
-            this.searchBtn.UseVisualStyleBackColor = false;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
-            // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(525, 26);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(50, 16);
-            this.searchLabel.TabIndex = 36;
-            this.searchLabel.Text = "Search";
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTextBox.Location = new System.Drawing.Point(581, 23);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(225, 22);
-            this.searchTextBox.TabIndex = 35;
-            // 
-            // exportBtn
-            // 
-            this.exportBtn.BackColor = System.Drawing.Color.DarkSalmon;
-            this.exportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.exportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exportBtn.ForeColor = System.Drawing.Color.Snow;
-            this.exportBtn.Location = new System.Drawing.Point(778, 357);
-            this.exportBtn.Name = "exportBtn";
-            this.exportBtn.Size = new System.Drawing.Size(107, 27);
-            this.exportBtn.TabIndex = 39;
-            this.exportBtn.Text = "Export";
-            this.exportBtn.UseVisualStyleBackColor = false;
-            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
-            // 
-            // reloadBtn
-            // 
-            this.reloadBtn.BackColor = System.Drawing.Color.MistyRose;
-            this.reloadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.reloadBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reloadBtn.ForeColor = System.Drawing.Color.Maroon;
-            this.reloadBtn.Location = new System.Drawing.Point(25, 357);
-            this.reloadBtn.Name = "reloadBtn";
-            this.reloadBtn.Size = new System.Drawing.Size(107, 27);
-            this.reloadBtn.TabIndex = 38;
-            this.reloadBtn.Text = "Reload";
-            this.reloadBtn.UseVisualStyleBackColor = false;
-            this.reloadBtn.Click += new System.EventHandler(this.reloadBtn_Click);
+            this.columnFilterComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.columnFilterComboBox.FormattingEnabled = true;
+            this.columnFilterComboBox.Location = new System.Drawing.Point(652, 23);
+            this.columnFilterComboBox.Name = "columnFilterComboBox";
+            this.columnFilterComboBox.Size = new System.Drawing.Size(155, 24);
+            this.columnFilterComboBox.TabIndex = 40;
             // 
             // supplier
             // 
@@ -472,5 +483,6 @@
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button exportBtn;
         private System.Windows.Forms.Button reloadBtn;
+        private System.Windows.Forms.ComboBox columnFilterComboBox;
     }
 }

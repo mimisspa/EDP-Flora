@@ -59,6 +59,7 @@
             this.customerBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.columnFilterComboBox = new System.Windows.Forms.ComboBox();
             this.crudPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
@@ -202,6 +203,7 @@
             // tablePanel
             // 
             this.tablePanel.BackColor = System.Drawing.Color.SeaShell;
+            this.tablePanel.Controls.Add(this.columnFilterComboBox);
             this.tablePanel.Controls.Add(this.exportBtn);
             this.tablePanel.Controls.Add(this.reloadBtn);
             this.tablePanel.Controls.Add(this.searchBtn);
@@ -260,7 +262,7 @@
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(524, 25);
+            this.searchLabel.Location = new System.Drawing.Point(364, 27);
             this.searchLabel.Name = "searchLabel";
             this.searchLabel.Size = new System.Drawing.Size(50, 16);
             this.searchLabel.TabIndex = 33;
@@ -269,7 +271,7 @@
             // searchTextBox
             // 
             this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTextBox.Location = new System.Drawing.Point(580, 22);
+            this.searchTextBox.Location = new System.Drawing.Point(420, 24);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(225, 22);
             this.searchTextBox.TabIndex = 32;
@@ -441,6 +443,15 @@
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
             // 
+            // columnFilterComboBox
+            // 
+            this.columnFilterComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.columnFilterComboBox.FormattingEnabled = true;
+            this.columnFilterComboBox.Location = new System.Drawing.Point(651, 22);
+            this.columnFilterComboBox.Name = "columnFilterComboBox";
+            this.columnFilterComboBox.Size = new System.Drawing.Size(155, 24);
+            this.columnFilterComboBox.TabIndex = 37;
+            // 
             // customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,5 +509,6 @@
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button exportBtn;
         private System.Windows.Forms.Button reloadBtn;
+        private System.Windows.Forms.ComboBox columnFilterComboBox;
     }
 }

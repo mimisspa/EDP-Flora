@@ -32,6 +32,7 @@ namespace EDP_Flora
             LoadOrderIDs();
             LoadPaymentMethods();
             saleDataGridView.CellClick += saleGridView_CellContentClick;
+            LoadSaleColumns();
 
         }
 
@@ -184,22 +185,64 @@ namespace EDP_Flora
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            string conString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            string conString = ConfigurationManager
+                .ConnectionStrings["MySqlConnection"]
+                .ConnectionString;
+            string userInput = searchTextBox.Text.Trim();
 
-            using (MySqlConnection con = new MySqlConnection(conString))
+            string selectedColumn = columnFilterComboBox.SelectedItem as string;
+            bool hasValidSelection =
+                !string.IsNullOrEmpty(selectedColumn)
+                && columnFilterComboBox.Items.Contains(selectedColumn);
+
+            string query;
+            if (hasValidSelection)
             {
-                con.Open();
+                query = $"SELECT * FROM sales WHERE `{selectedColumn}` LIKE @search";
+            }
+            else
+            {
+                var cols = columnFilterComboBox.Items
+                            .Cast<string>()
+                            .Select(col => $"`{col}` LIKE @search");
+                query = "SELECT * FROM sales WHERE " + string.Join(" OR ", cols);
+            }
 
-                string query = "SELECT * FROM sales WHERE salesID LIKE @salesID";
-                MySqlCommand cmd = new MySqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@salesID", "%" + searchTextBox.Text + "%");
+            using (var con = new MySqlConnection(conString))
+            using (var cmd = new MySqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@search", "%" + userInput + "%");
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable table = new DataTable();
+                var adapter = new MySqlDataAdapter(cmd);
+                var table = new DataTable();
                 adapter.Fill(table);
-
                 saleDataGridView.DataSource = table;
             }
+        }
+
+        private void LoadSaleColumns()
+        {
+            columnFilterComboBox.Items.Clear();
+
+            string conString = ConfigurationManager
+                .ConnectionStrings["MySqlConnection"]
+                .ConnectionString;
+
+            using (var con = new MySqlConnection(conString))
+            using (var cmd = new MySqlCommand("SHOW COLUMNS FROM sales", con))
+            {
+                con.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string colName = reader.GetString(0);
+                        columnFilterComboBox.Items.Add(colName);
+                    }
+                }
+            }
+
+            columnFilterComboBox.SelectedIndex = -1;
         }
 
         private void exportBtn_Click(object sender, EventArgs e)

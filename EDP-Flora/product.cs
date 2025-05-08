@@ -36,6 +36,7 @@ namespace EDP_Flora
             LoadProductTable();
             productDataGridView.CellClick += productGridView_CellContentClick;
             LoadCategoryIDs();
+            LoadProductColumns();   
 
         }
 
@@ -168,22 +169,65 @@ namespace EDP_Flora
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            string conString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            string conString = ConfigurationManager
+                .ConnectionStrings["MySqlConnection"]
+                .ConnectionString;
+            string userInput = searchTextBox.Text.Trim();
 
-            using (MySqlConnection con = new MySqlConnection(conString))
+            string selectedColumn = columnFilterComboBox.SelectedItem as string;
+            bool hasValidSelection =
+                !string.IsNullOrEmpty(selectedColumn)
+                && columnFilterComboBox.Items.Contains(selectedColumn);
+
+            string query;
+            if (hasValidSelection)
             {
-                con.Open();
+                query = $"SELECT * FROM products WHERE `{selectedColumn}` LIKE @search";
+            }
+            else
+            {
+                var cols = columnFilterComboBox.Items
+                            .Cast<string>()
+                            .Select(col => $"`{col}` LIKE @search");
+                query = "SELECT * FROM products WHERE " + string.Join(" OR ", cols);
+            }
 
-                string query = "SELECT * FROM products WHERE productName LIKE @productName";
-                MySqlCommand cmd = new MySqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@productName", "%" + searchTextBox.Text + "%");
+            using (var con = new MySqlConnection(conString))
+            using (var cmd = new MySqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@search", "%" + userInput + "%");
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable table = new DataTable();
+                var adapter = new MySqlDataAdapter(cmd);
+                var table = new DataTable();
                 adapter.Fill(table);
-
                 productDataGridView.DataSource = table;
             }
+        }
+
+
+        private void LoadProductColumns()
+        {
+            columnFilterComboBox.Items.Clear();
+
+            string conString = ConfigurationManager
+                .ConnectionStrings["MySqlConnection"]
+                .ConnectionString;
+
+            using (var con = new MySqlConnection(conString))
+            using (var cmd = new MySqlCommand("SHOW COLUMNS FROM products", con))
+            {
+                con.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string colName = reader.GetString(0);
+                        columnFilterComboBox.Items.Add(colName);
+                    }
+                }
+            }
+
+            columnFilterComboBox.SelectedIndex = -1;
         }
 
         private void exportBtn_Click(object sender, EventArgs e)

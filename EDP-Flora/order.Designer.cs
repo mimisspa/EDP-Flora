@@ -48,6 +48,8 @@
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
             this.crudPanel = new System.Windows.Forms.Panel();
+            this.orderIDLabel = new System.Windows.Forms.Label();
+            this.orderIDTextBox = new System.Windows.Forms.TextBox();
             this.productComboBox = new System.Windows.Forms.ComboBox();
             this.productIDLabel = new System.Windows.Forms.Label();
             this.quantityLabel = new System.Windows.Forms.Label();
@@ -55,8 +57,7 @@
             this.addBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
-            this.orderIDLabel = new System.Windows.Forms.Label();
-            this.orderIDTextBox = new System.Windows.Forms.TextBox();
+            this.columnFilterComboBox = new System.Windows.Forms.ComboBox();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).BeginInit();
             this.navbarPanel.SuspendLayout();
@@ -67,6 +68,7 @@
             // tablePanel
             // 
             this.tablePanel.BackColor = System.Drawing.Color.SeaShell;
+            this.tablePanel.Controls.Add(this.columnFilterComboBox);
             this.tablePanel.Controls.Add(this.exportBtn);
             this.tablePanel.Controls.Add(this.reloadBtn);
             this.tablePanel.Controls.Add(this.searchBtn);
@@ -125,7 +127,7 @@
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(526, 26);
+            this.searchLabel.Location = new System.Drawing.Point(366, 28);
             this.searchLabel.Name = "searchLabel";
             this.searchLabel.Size = new System.Drawing.Size(50, 16);
             this.searchLabel.TabIndex = 33;
@@ -134,7 +136,7 @@
             // searchTextBox
             // 
             this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTextBox.Location = new System.Drawing.Point(582, 23);
+            this.searchTextBox.Location = new System.Drawing.Point(422, 25);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(225, 22);
             this.searchTextBox.TabIndex = 32;
@@ -324,6 +326,24 @@
             this.crudPanel.Size = new System.Drawing.Size(906, 193);
             this.crudPanel.TabIndex = 42;
             // 
+            // orderIDLabel
+            // 
+            this.orderIDLabel.AutoSize = true;
+            this.orderIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderIDLabel.Location = new System.Drawing.Point(225, 65);
+            this.orderIDLabel.Name = "orderIDLabel";
+            this.orderIDLabel.Size = new System.Drawing.Size(54, 16);
+            this.orderIDLabel.TabIndex = 33;
+            this.orderIDLabel.Text = "OrderID";
+            // 
+            // orderIDTextBox
+            // 
+            this.orderIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderIDTextBox.Location = new System.Drawing.Point(286, 62);
+            this.orderIDTextBox.Name = "orderIDTextBox";
+            this.orderIDTextBox.Size = new System.Drawing.Size(225, 22);
+            this.orderIDTextBox.TabIndex = 32;
+            // 
             // productComboBox
             // 
             this.productComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -403,23 +423,14 @@
             this.quantityTextBox.Size = new System.Drawing.Size(225, 22);
             this.quantityTextBox.TabIndex = 26;
             // 
-            // orderIDLabel
+            // columnFilterComboBox
             // 
-            this.orderIDLabel.AutoSize = true;
-            this.orderIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderIDLabel.Location = new System.Drawing.Point(225, 65);
-            this.orderIDLabel.Name = "orderIDLabel";
-            this.orderIDLabel.Size = new System.Drawing.Size(54, 16);
-            this.orderIDLabel.TabIndex = 33;
-            this.orderIDLabel.Text = "OrderID";
-            // 
-            // orderIDTextBox
-            // 
-            this.orderIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderIDTextBox.Location = new System.Drawing.Point(286, 62);
-            this.orderIDTextBox.Name = "orderIDTextBox";
-            this.orderIDTextBox.Size = new System.Drawing.Size(225, 22);
-            this.orderIDTextBox.TabIndex = 32;
+            this.columnFilterComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.columnFilterComboBox.FormattingEnabled = true;
+            this.columnFilterComboBox.Location = new System.Drawing.Point(653, 23);
+            this.columnFilterComboBox.Name = "columnFilterComboBox";
+            this.columnFilterComboBox.Size = new System.Drawing.Size(155, 24);
+            this.columnFilterComboBox.TabIndex = 43;
             // 
             // order
             // 
@@ -474,5 +485,6 @@
         private System.Windows.Forms.Button reloadBtn;
         private System.Windows.Forms.Label orderIDLabel;
         private System.Windows.Forms.TextBox orderIDTextBox;
+        private System.Windows.Forms.ComboBox columnFilterComboBox;
     }
 }

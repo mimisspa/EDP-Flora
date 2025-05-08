@@ -57,6 +57,7 @@
             this.updateBtn = new System.Windows.Forms.Button();
             this.addBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
+            this.columnFilterComboBox = new System.Windows.Forms.ComboBox();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.saleDataGridView)).BeginInit();
             this.navbarPanel.SuspendLayout();
@@ -67,6 +68,7 @@
             // tablePanel
             // 
             this.tablePanel.BackColor = System.Drawing.Color.SeaShell;
+            this.tablePanel.Controls.Add(this.columnFilterComboBox);
             this.tablePanel.Controls.Add(this.exportBtn);
             this.tablePanel.Controls.Add(this.reloadBtn);
             this.tablePanel.Controls.Add(this.searchBtn);
@@ -125,7 +127,7 @@
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(525, 26);
+            this.searchLabel.Location = new System.Drawing.Point(365, 27);
             this.searchLabel.Name = "searchLabel";
             this.searchLabel.Size = new System.Drawing.Size(50, 16);
             this.searchLabel.TabIndex = 33;
@@ -134,7 +136,7 @@
             // searchTextBox
             // 
             this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTextBox.Location = new System.Drawing.Point(581, 23);
+            this.searchTextBox.Location = new System.Drawing.Point(421, 24);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(225, 22);
             this.searchTextBox.TabIndex = 32;
@@ -420,6 +422,15 @@
             this.deleteBtn.UseVisualStyleBackColor = false;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
+            // columnFilterComboBox
+            // 
+            this.columnFilterComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.columnFilterComboBox.FormattingEnabled = true;
+            this.columnFilterComboBox.Location = new System.Drawing.Point(652, 22);
+            this.columnFilterComboBox.Name = "columnFilterComboBox";
+            this.columnFilterComboBox.Size = new System.Drawing.Size(155, 24);
+            this.columnFilterComboBox.TabIndex = 37;
+            // 
             // sale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,5 +484,6 @@
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button exportBtn;
         private System.Windows.Forms.Button reloadBtn;
+        private System.Windows.Forms.ComboBox columnFilterComboBox;
     }
 }
