@@ -88,6 +88,11 @@ namespace EDP_Flora
             form.FormClosed += (s, args) => this.Close();
             form.Show();
         }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            OpenForm(new forgotPassVerify());
+        }
     }
  }
 

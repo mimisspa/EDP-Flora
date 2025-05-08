@@ -120,6 +120,7 @@
             this.backBtn.TabIndex = 8;
             this.backBtn.Text = "Back";
             this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // instructionLogin
             // 
