@@ -439,6 +439,8 @@
             this.Controls.Add(this.crudPanel);
             this.Controls.Add(this.tablePanel);
             this.Controls.Add(this.navbarPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "supplier";
             this.Text = "Flora - Supplier";
             this.Load += new System.EventHandler(this.supplier_Load);

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(forgotPassVerify));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.loginPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.securityAnswerTextBox = new System.Windows.Forms.TextBox();
@@ -57,6 +58,7 @@
             // loginPanel
             // 
             this.loginPanel.BackColor = System.Drawing.Color.SeaShell;
+            this.loginPanel.Controls.Add(this.label1);
             this.loginPanel.Controls.Add(this.usernameTextBox);
             this.loginPanel.Controls.Add(this.usernameLabel);
             this.loginPanel.Controls.Add(this.securityAnswerTextBox);
@@ -70,6 +72,16 @@
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(483, 563);
             this.loginPanel.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(175, 290);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 20);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Security Question";
             // 
             // usernameTextBox
             // 
@@ -124,11 +136,12 @@
             // instructionLogin
             // 
             this.instructionLogin.AutoSize = true;
-            this.instructionLogin.Location = new System.Drawing.Point(116, 207);
+            this.instructionLogin.Location = new System.Drawing.Point(63, 210);
             this.instructionLogin.Name = "instructionLogin";
-            this.instructionLogin.Size = new System.Drawing.Size(266, 13);
+            this.instructionLogin.Size = new System.Drawing.Size(355, 13);
             this.instructionLogin.TabIndex = 7;
-            this.instructionLogin.Text = "Please enter your username and password to continue.";
+            this.instructionLogin.Text = "Please enter your username and answer the security question to continue.";
+            this.instructionLogin.Click += new System.EventHandler(this.instructionLogin_Click);
             // 
             // verifyBtn
             // 
@@ -171,6 +184,8 @@
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.loginPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "forgotPassVerify";
             this.Text = "Flora - Forgot Password";
             this.Load += new System.EventHandler(this.forgotPassVerify_Load);
@@ -195,5 +210,6 @@
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Label usernameLabel;
+        private System.Windows.Forms.Label label1;
     }
 }

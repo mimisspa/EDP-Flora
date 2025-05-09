@@ -125,11 +125,12 @@
             // instructionLogin
             // 
             this.instructionLogin.AutoSize = true;
-            this.instructionLogin.Location = new System.Drawing.Point(116, 207);
+            this.instructionLogin.Location = new System.Drawing.Point(125, 210);
             this.instructionLogin.Name = "instructionLogin";
-            this.instructionLogin.Size = new System.Drawing.Size(266, 13);
+            this.instructionLogin.Size = new System.Drawing.Size(219, 13);
             this.instructionLogin.TabIndex = 7;
-            this.instructionLogin.Text = "Please enter your username and password to continue.";
+            this.instructionLogin.Text = "Please enter your new password to continue.";
+            this.instructionLogin.Click += new System.EventHandler(this.instructionLogin_Click);
             // 
             // resetBtn
             // 
@@ -171,6 +172,8 @@
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.loginPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "forgotPassResetPass";
             this.Text = "Flora - Reset Password";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -170,8 +170,11 @@
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.loginPanel);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "login";
             this.Text = "Flora - Login";
+            this.Load += new System.EventHandler(this.login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.loginPanel.ResumeLayout(false);
             this.loginPanel.PerformLayout();

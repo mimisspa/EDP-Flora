@@ -462,6 +462,8 @@
             this.Controls.Add(this.crudPanel);
             this.Controls.Add(this.tablePanel);
             this.Controls.Add(this.navbarPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "customer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Flora - Customer";

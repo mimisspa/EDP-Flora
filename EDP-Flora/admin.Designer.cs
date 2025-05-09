@@ -40,6 +40,7 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.tablePanel = new System.Windows.Forms.Panel();
+            this.columnFilterComboBox = new System.Windows.Forms.ComboBox();
             this.exportBtn = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
             this.reloadBtn = new System.Windows.Forms.Button();
@@ -57,7 +58,6 @@
             this.customerBtn = new System.Windows.Forms.Button();
             this.adminBtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.columnFilterComboBox = new System.Windows.Forms.ComboBox();
             this.crudPanel.SuspendLayout();
             this.tablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDataGridView)).BeginInit();
@@ -196,6 +196,15 @@
             this.tablePanel.Size = new System.Drawing.Size(906, 398);
             this.tablePanel.TabIndex = 32;
             this.tablePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tablePanel_Paint);
+            // 
+            // columnFilterComboBox
+            // 
+            this.columnFilterComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.columnFilterComboBox.FormattingEnabled = true;
+            this.columnFilterComboBox.Location = new System.Drawing.Point(651, 22);
+            this.columnFilterComboBox.Name = "columnFilterComboBox";
+            this.columnFilterComboBox.Size = new System.Drawing.Size(155, 24);
+            this.columnFilterComboBox.TabIndex = 33;
             // 
             // exportBtn
             // 
@@ -426,15 +435,6 @@
             this.logo.TabIndex = 21;
             this.logo.TabStop = false;
             // 
-            // columnFilterComboBox
-            // 
-            this.columnFilterComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.columnFilterComboBox.FormattingEnabled = true;
-            this.columnFilterComboBox.Location = new System.Drawing.Point(651, 22);
-            this.columnFilterComboBox.Name = "columnFilterComboBox";
-            this.columnFilterComboBox.Size = new System.Drawing.Size(155, 24);
-            this.columnFilterComboBox.TabIndex = 33;
-            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,6 +444,8 @@
             this.Controls.Add(this.crudPanel);
             this.Controls.Add(this.tablePanel);
             this.Controls.Add(this.navbarPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Flora - Admin";

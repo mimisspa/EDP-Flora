@@ -75,5 +75,10 @@ namespace EDP_Flora
         {
             OpenForm(new forgotPassVerify());
         }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
