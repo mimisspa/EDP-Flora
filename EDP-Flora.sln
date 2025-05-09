@@ -5,7 +5,7 @@ VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDP-Flora", "EDP-Flora\EDP-Flora.csproj", "{0F3B78A7-B611-4E08-A22D-D403D9542E8B}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FloraFlowerShop", "FloraFlowerShop\FloraFlowerShop.vdproj", "{9C9E7FB5-AD67-0E91-3AD7-191BD45BF868}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FloraApplication", "FloraApplication\FloraApplication.vdproj", "{AB058050-13A5-5772-3BA2-F8BA185D51C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{0F3B78A7-B611-4E08-A22D-D403D9542E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F3B78A7-B611-4E08-A22D-D403D9542E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F3B78A7-B611-4E08-A22D-D403D9542E8B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9C9E7FB5-AD67-0E91-3AD7-191BD45BF868}.Debug|Any CPU.ActiveCfg = Debug
-		{9C9E7FB5-AD67-0E91-3AD7-191BD45BF868}.Release|Any CPU.ActiveCfg = Release
+		{AB058050-13A5-5772-3BA2-F8BA185D51C2}.Debug|Any CPU.ActiveCfg = Debug
+		{AB058050-13A5-5772-3BA2-F8BA185D51C2}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
